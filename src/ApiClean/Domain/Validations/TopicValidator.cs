@@ -22,16 +22,7 @@ namespace Domain.Validations
                 .NotNull()
                 .WithMessage("O nome não pode ser nulo.")
                 .NotEmpty()
-                .WithMessage("O Nome não pode estar em branco.")
-                .Must((topic, name) => NameNotExists(topic, name))
-                .WithMessage("Este nome de tópico já existe na base de dados.");
-        }
-
-        private bool NameNotExists(Topic topic, string name)
-        {
-            List<Topic> topics = topicRepository.GetAll();
-
-            return !(topics.Exists(x => x.Name == name && x.Id != topic.Id));
+                .WithMessage("O Nome não pode estar em branco.");
         }
     }
 }

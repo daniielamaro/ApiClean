@@ -24,7 +24,8 @@ namespace Domain.Validations
                 .WithMessage("O Nome não pode estar em branco.")
                 .Must(NameOnlyLetters)
                 .WithMessage("O Nome não pode conter números ou caracteres especiais.")
-                .MaximumLength(150);
+                .MaximumLength(150)
+                .WithMessage("O Nome não pode conter acima de 150 caracteres.");
 
             RuleFor(x => x.Email)
                 .Cascade(CascadeMode.StopOnFirstFailure)

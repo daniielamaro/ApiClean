@@ -30,7 +30,7 @@ namespace Domain.Validations
                 .NotNull()
                 .WithMessage("O Id da publicação não pode ser nulo.")
                 .NotEqual(new Guid())
-                .WithMessage("O Id da publicação não pode ser um Guid vazio (zerado)")
+                .WithMessage("O Id da publicação não pode ser um Guid vazio (zerado)");
         }
      }   
 }
