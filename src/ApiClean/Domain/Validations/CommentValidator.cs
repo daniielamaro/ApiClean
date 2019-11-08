@@ -11,8 +11,6 @@ namespace Domain.Validations
 
         public CommentValidator()
         {
-            publicationRepository = new PublicationRepository();
-
             RuleFor(x => x.Id)
                 .NotNull()
                 .WithMessage("O Id não pode ser nulo.")
@@ -35,15 +33,6 @@ namespace Domain.Validations
                 .WithMessage("O Id da publicação não pode ser nulo.")
                 .NotEqual(new Guid())
                 .WithMessage("O Id da publicação não pode ser um Guid vazio (zerado)")
-                .Must(PublicationExists)
-                .WithMessage("Esta publicação não existe");
-        }
-
-        private bool PublicationExists(Guid id)
-        {
-            List<Publication> listPublications = publicationRepository.GetAll();
-
-            return (listPublications.Exists(x => x.Id == id));
         }
      }   
 }
