@@ -4,4 +4,11 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Comment\" />
+    <Folder Include="Topic\" />
+    <Folder Include="Publication\" />
+    <Folder Include="Validator\" />
+  </ItemGroup>
+
 </Project>
