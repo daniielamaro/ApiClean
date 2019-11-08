@@ -1,4 +1,4 @@
-﻿using FluentValidation;
+using FluentValidation;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -45,5 +45,5 @@ namespace Domain.Validations
 
             return (listPublications.Exists(x => x.Id == id));
         }
-    }
+     }   
 }

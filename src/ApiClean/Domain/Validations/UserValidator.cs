@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FluentValidation;
 
-namespace Domain.Validator
+namespace Domain.Validations
 {
     public class UserValidator : AbstractValidator<User.User>
     {
