@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Domain.Validations
 {
-    class PublicationValidator : AbstractValidator<Publication.publication>
+    public class PublicationValidator : AbstractValidator<Publication.publication>
     {
         public PublicationValidator()
         {

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Domain.Validations
 {
-    class PublicationExistValidator : AbstractValidator<Guid>
+    public class PublicationExistValidator : AbstractValidator<Guid>
     {
         private readonly IPublicationRepository publicationRepository;
 
