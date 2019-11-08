@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Domain.Validations
 {
-    class UserExistValidator : AbstractValidator<User.User>
+    public class UserExistValidator : AbstractValidator<User.User>
     {
         private readonly IUserRepository userRepository;
 

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Domain.Validations
 {
-    class TopicValidator : AbstractValidator<Topic.Topic>
+    public class TopicValidator : AbstractValidator<Topic.Topic>
     {
         private readonly ITopicRepository topicRepository;
 

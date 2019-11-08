@@ -5,7 +5,7 @@ using FluentValidation;
 
 namespace Domain.Validator
 {
-    class UserValidator : AbstractValidator<User.User>
+    public class UserValidator : AbstractValidator<User.User>
     {
         private readonly IUserRepository userRepository;
 

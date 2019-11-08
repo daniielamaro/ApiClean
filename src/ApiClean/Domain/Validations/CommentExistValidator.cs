@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Domain.Validations
 {
-    class CommentExistValidator : AbstractValidator<Guid>
+    public class CommentExistValidator : AbstractValidator<Guid>
     {
         public CommentExistValidator()
         {
