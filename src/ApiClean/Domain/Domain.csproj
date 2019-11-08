@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Comment\" />
+    <PackageReference Include="FluentValidation" Version="8.5.1" />
+	<Folder Include="Comment\" />
     <Folder Include="Topic\" />
     <Folder Include="Publication\" />
     <Folder Include="Validator\" />
