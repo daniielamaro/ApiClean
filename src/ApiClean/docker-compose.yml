@@ -1,8 +1,13 @@
 version: '3.4'
 
 services:
-  webapi:
-    image: ${DOCKER_REGISTRY-}webapi
+  apiclean.webapi:
+    image: ${DOCKER_REGISTRY-}apicleanwebapi
     build:
       context: .
-      dockerfile: WebApi/Dockerfile
+      dockerfile: ../ApiClean.WebApi/Dockerfile
+    networks:
+      - apicleanarchitecture-network
+
+networks: 
+  apicleanarchitecture-network:
