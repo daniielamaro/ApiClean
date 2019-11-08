@@ -5,18 +5,14 @@ using System.Text;
 
 namespace Domain.Validations
 {
-    public class CommentValidator : AbstractValidator<Comment>
+    public class CommentValidator : AbstractValidator<Comment.Comment>
     {
-        private readonly IPublicationRepository publicationRepository;
-
         public CommentValidator()
         {
-            publicationRepository = new PublicationRepository();
-
             RuleFor(x => x.Id)
                 .NotNull()
                 .WithMessage("O Id não pode ser nulo.")
-                .NotEmpty()
+                .NotEqual(new Guid())
                 .WithMessage("O comentario não pode estar vazio.");
 
             RuleFor(x => x.Autor)
@@ -35,15 +31,6 @@ namespace Domain.Validations
                 .WithMessage("O Id da publicação não pode ser nulo.")
                 .NotEqual(new Guid())
                 .WithMessage("O Id da publicação não pode ser um Guid vazio (zerado)")
-                .Must(PublicationExists)
-                .WithMessage("Esta publicação não existe");
-        }
-
-        private bool PublicationExists(Guid id)
-        {
-            List<Publication> listPublications = publicationRepository.GetAll();
-
-            return (listPublications.Exists(x => x.Id == id));
         }
      }   
 }
