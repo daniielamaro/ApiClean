@@ -3,13 +3,13 @@ using System.Collections.Generic;
 
 namespace Application.Boundaries.User
 {
-    public interface IOutputPort
+    public interface IOutputPort<T>
     {
         void Standard(Guid id);
 
-        void Standard(Domain.User.User user);
+        void Standard(T model);
 
-        void Standard(IList<Domain.User.User> user);
+        void Standard(IList<T> model);
 
         void NotFound(string message);
 
