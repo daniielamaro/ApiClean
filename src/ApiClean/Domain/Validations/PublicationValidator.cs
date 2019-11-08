@@ -16,12 +16,8 @@ namespace Domain.Validations
                 .NotEqual(new Guid())
                 .WithMessage("O Id não pode ser um Guid vazio (zerado).");
 
-            RuleFor(x => x.Autor.Id)
-                .Cascade(CascadeMode.StopOnFirstFailure)
-                .NotNull()
-                .WithMessage("O Id do Autor não pode ser nulo.")
-                .NotEqual(new Guid())
-                .WithMessage("O Id do Autor não pode ser um Guid vazio (zerado).");
+            RuleFor(x => x.Autor)
+                .SetValidator(new UserValidator());
 
             RuleFor(x => x.Title)
                 .Cascade(CascadeMode.StopOnFirstFailure)
@@ -37,12 +33,8 @@ namespace Domain.Validations
                 .NotEmpty()
                 .WithMessage("O conteudo não pode estar em branco.");
 
-            RuleFor(x => x.Topic.Id)
-                .Cascade(CascadeMode.StopOnFirstFailure)
-                .NotNull()
-                .WithMessage("O Id do Topico não pode ser nulo.")
-                .NotEqual(new Guid())
-                .WithMessage("O Id do Topico não pode ser um Guid vazio (zerado).");
+            RuleFor(x => x.Topic)
+                .SetValidator(new TopicValidator());
         }
     }
 }

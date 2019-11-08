@@ -5,7 +5,7 @@ using Xunit;
 using XUnitTest.Builders;
 using FluentAssertions;
 
-namespace XUnitTest.Cases.User
+namespace XUnitTest.Cases.Domain.User
 {
     public class UserTests
     {
