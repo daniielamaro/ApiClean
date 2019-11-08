@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
@@ -6,6 +6,26 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="UseCases\Comment\Save\" />
+    <Folder Include="UseCases\Comment\Delete\" />
+    <Folder Include="UseCases\Comment\GetAll\" />
+    <Folder Include="UseCases\Comment\Get\" />
+    <Folder Include="UseCases\Topic\Create\" />
+    <Folder Include="UseCases\Topic\Delete\" />
+    <Folder Include="UseCases\Topic\GetAll\" />
+    <Folder Include="UseCases\Topic\Update\" />
+    <Folder Include="UseCases\Publication\Create\" />
+    <Folder Include="UseCases\Publication\Delete\" />
+    <Folder Include="UseCases\Publication\GetAll\" />
+    <Folder Include="UseCases\Publication\Update\" />
+    <Folder Include="UseCases\User\Delete\" />
+    <Folder Include="UseCases\User\Create\" />
+    <Folder Include="UseCases\User\GetAll\" />
+    <Folder Include="UseCases\User\" />
+    <Folder Include="UseCases\User\Update\" />
   </ItemGroup>
 
 </Project>

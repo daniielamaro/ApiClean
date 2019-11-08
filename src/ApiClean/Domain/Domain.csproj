@@ -9,7 +9,6 @@
 	<Folder Include="Comment\" />
     <Folder Include="Topic\" />
     <Folder Include="Publication\" />
-    <Folder Include="Validator\" />
   </ItemGroup>
 
 </Project>
