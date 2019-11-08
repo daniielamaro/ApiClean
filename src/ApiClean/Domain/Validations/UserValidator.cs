@@ -1,11 +1,11 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FluentValidation;
 
-namespace Domain.Validator
+namespace Domain.Validations
 {
-    class UserValidator : AbstractValidator<User.User>
+    public class UserValidator : AbstractValidator<User.User>
     {
         private readonly IUserRepository userRepository;
 

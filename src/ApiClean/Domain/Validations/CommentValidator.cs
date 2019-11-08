@@ -1,11 +1,11 @@
-﻿using FluentValidation;
+using FluentValidation;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Domain.Validations
 {
-    class CommentValidator : AbstractValidator<Comment>
+    public class CommentValidator : AbstractValidator<Comment>
     {
         private readonly IPublicationRepository publicationRepository;
 
@@ -45,5 +45,5 @@ namespace Domain.Validations
 
             return (listPublications.Exists(x => x.Id == id));
         }
-    }
+     }   
 }
