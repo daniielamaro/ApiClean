@@ -9,10 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="UseCases\Comment\Delete\" />
-    <Folder Include="UseCases\Comment\Get\" />
-    <Folder Include="UseCases\Comment\GetAll\" />
-    <Folder Include="UseCases\Comment\Save\" />
     <Folder Include="UseCases\Publication\Delete\" />
     <Folder Include="UseCases\Publication\GetAll\" />
     <Folder Include="UseCases\Publication\Get\" />

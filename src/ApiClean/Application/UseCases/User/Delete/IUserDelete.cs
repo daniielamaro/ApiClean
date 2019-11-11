@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Application.UseCases.User.Delete
 {
-    class IUserDelete
+    public interface IUserDelete
     {
     }
 }
