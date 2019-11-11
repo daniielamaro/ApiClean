@@ -12,10 +12,10 @@ namespace Domain.Publication
         public string Title { get; private set; }
         public string Content { get; private set; }
         public DateTime DateCreated { get; private set; }
-        public List<Comment> Comments { get; private set; }
+        public List<Comment.Comment> Comments { get; private set; }
         public Topic.Topic Topic { get; private set; }
 
-        public Publication(Guid id, User.User autor, string title, string content, DateTime dateCreated, List<Comment> comments, Topic.Topic topic)
+        public Publication(Guid id, User.User autor, string title, string content, DateTime dateCreated, List<Comment.Comment> comments, Topic.Topic topic)
         {
             Id = id;
             Autor = autor;
