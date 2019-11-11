@@ -37,13 +37,13 @@ namespace XUnitTest.Builders
             return this;
         }
 
-        public UserBuilder WithAge(string email)
+        public UserBuilder WithEmail(string email)
         {
             Email = email;
             return this;
         }
 
-        public UserBuilder WithEmail(string password)
+        public UserBuilder WithPassword(string password)
         {
             Password = password;
             return this;

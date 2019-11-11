@@ -9,7 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Boundaries\User\" />
     <Folder Include="UseCases\Comment\Delete\" />
     <Folder Include="UseCases\Comment\Get\" />
     <Folder Include="UseCases\Comment\GetAll\" />
