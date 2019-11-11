@@ -9,10 +9,10 @@ namespace Application.UseCases.User.Save
 {
     class UserSave : IUserSave
     {
-        private readonly IOutputPort<Domain.User.User> output;
+        private readonly IOutputPortUser output;
         private readonly ValidateHandler validateHandler;
 
-        public UserSave(IOutputPort<Domain.User.User> output, ValidateHandler validateHandler, SaveHandler saveHandler)
+        public UserSave(IOutputPortUser output, ValidateHandler validateHandler, SaveHandler saveHandler)
         {
             this.output = output;
             this.validateHandler = validateHandler;
