@@ -1,7 +1,6 @@
 ﻿using ApiClean.Application.Repositories;
+using Application.UseCases.Repository.Handler;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Application.UseCases.User.Save.Handlers
 {
@@ -20,8 +19,8 @@ namespace Application.UseCases.User.Save.Handlers
             if (ret == 0)
                 throw new ArgumentException("Problema ao salvar!");
 
-            if (Sucessor != null)
-                Sucessor.ProcessRequest(request);
+            if (sucessor != null)
+                sucessor.ProcessRequest(request);
         }
     }
 }

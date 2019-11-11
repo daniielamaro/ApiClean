@@ -1,5 +1,5 @@
 ﻿using Application.Boundaries.User;
-using Application.UseCases.Topic.Save.Handler;
+using Application.UseCases.Publication.Save.Handler;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -22,7 +22,7 @@ namespace Application.UseCases.Publication.Save
             try
             {
                 validateHandler.ProcessRequest(request);
-                output.Standard(request.Pub.Id);
+                output.Standard(request.Publication.Id);
             }
             catch (Exception ex)
             {
