@@ -1,4 +1,5 @@
 ﻿using ApiClean.Application.Repositories;
+using Application.Boundaries.Publication;
 using Application.Boundaries.User;
 using System;
 using System.Collections.Generic;
@@ -8,10 +9,10 @@ namespace Application.UseCases.Publication.Delete
 {
     public class PublicationDeleteUseCase : IPublicationDeleteUseCase
     {
-        private readonly IOutputPort<Domain.Publication.Publication> output;
+        private readonly IOutputPortPublication output;
         private readonly IPublicationWriteOnlyRepository pubWriteOnlyRepository;
 
-        public PublicationDeleteUseCase(IOutputPort<Domain.Publication.Publication> output, IPublicationWriteOnlyRepository pubWriteOnlyRepository)
+        public PublicationDeleteUseCase(IOutputPortPublication output, IPublicationWriteOnlyRepository pubWriteOnlyRepository)
         {
             this.output = output;
             this.pubWriteOnlyRepository = pubWriteOnlyRepository;

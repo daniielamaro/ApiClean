@@ -11,7 +11,7 @@ namespace ApiClean.Application.Repositories
 
         int Add(Topic topic);
 
-        int Add(List<Topic> topic);
+        int Add(List<Topic> topics);
 
         int Delete(Guid id);
 

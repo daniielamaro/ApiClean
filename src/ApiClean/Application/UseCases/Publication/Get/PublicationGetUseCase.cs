@@ -1,4 +1,5 @@
 ﻿using ApiClean.Application.Repositories;
+using Application.Boundaries.Publication;
 using Application.Boundaries.User;
 using System;
 using System.Collections.Generic;
@@ -8,10 +9,10 @@ namespace Application.UseCases.Publication.Get
 {
     public class PublicationGetUseCase
     {
-        private readonly IOutputPort<Domain.Publication.Publication> output;
+        private readonly IOutputPortPublication output;
         private readonly IPublicationReadOnlyRepository pubReadOnlyRepository;
 
-        public PublicationGetUseCase(IOutputPort<Domain.Publication.Publication> output, IPublicationReadOnlyRepository pubReadOnlyRepository)
+        public PublicationGetUseCase(IOutputPortPublication output, IPublicationReadOnlyRepository pubReadOnlyRepository)
         {
             this.output = output;
             this.pubReadOnlyRepository = pubReadOnlyRepository;

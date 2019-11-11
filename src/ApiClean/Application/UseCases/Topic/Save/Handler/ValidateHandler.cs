@@ -1,7 +1,5 @@
 ﻿using Application.UseCases.Repository.Handler;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Application.UseCases.Topic.Save.Handler
 {
@@ -12,8 +10,8 @@ namespace Application.UseCases.Topic.Save.Handler
             if (!request.Topic.IsValid)
                 throw new ArgumentException("Model invalid");
 
-            if (sucessor != null)
-                sucessor.ProcessRequest(request);
+            if (Sucessor != null)
+                Sucessor.ProcessRequest(request);
         }
     }
 }

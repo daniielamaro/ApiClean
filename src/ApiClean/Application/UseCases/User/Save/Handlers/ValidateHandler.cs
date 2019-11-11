@@ -1,7 +1,5 @@
 ﻿using Application.UseCases.Repository.Handler;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Application.UseCases.User.Save.Handlers
 {

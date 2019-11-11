@@ -8,6 +8,7 @@ namespace Application.UseCases.Publication.Save
     {
         public Domain.Publication.Publication Publication { get; private set; }
 
+
         public PublicationSaveRequest(Domain.User.User autor, string title, string content, DateTime dateCreated, List<Domain.Comment.Comment> comment, Domain.Topic.Topic topic)
         {
             Publication = new Domain.Publication.Publication(Guid.NewGuid(), autor, title, content, dateCreated, comment, topic);

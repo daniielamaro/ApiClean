@@ -6,6 +6,10 @@
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile></DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Remove="Builders\PublicationBuilder.cs~RFb3914c.TMP" />
   </ItemGroup>
@@ -25,12 +29,6 @@
     <ProjectReference Include="..\Domain\Domain.csproj" />
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
     <ProjectReference Include="..\WebApi\WebApi.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Cases\Application\User\GetAll\" />
-    <Folder Include="Cases\Application\User\Get\" />
-    <Folder Include="Cases\Application\User\Save\" />
   </ItemGroup>
 
 </Project>

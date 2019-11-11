@@ -1,39 +1,39 @@
 ﻿using ApiClean.Application.Repositories;
+using Application.UseCases.Topic.Delete;
 using Application.UseCases.User.Delete;
 using DemoCleanArchitecture.Tests.TestCaseOrdering;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using WebApi.UseCases.User;
 using Xunit;
 using Xunit.Frameworks.Autofac;
 using XUnitTest.Builders;
 
-namespace XUnitTest.Cases.Application.User.Delete
+namespace XUnitTest.Cases.Application.Topic.Delete
 {
     [UseAutofacTestFramework]
     [TestCaseOrderer("ApiClean.Tests.TestCaseOrdering.PriorityOrderer", "ApiClean.Tests")]
-    public class UserDeleteUseCaseTests
+    public class TopicDeleteUseCaseTests
     {
-        private readonly IUserDelete userDeleteUseCase;
-        private readonly UserPresenter presenter;
-        private readonly IUserWriteOnlyRepository userWriteOnlyRepository;
+        private readonly ITopicDeleteUseCase topicDeleteUseCase;
+        private readonly TopicPresenter presenter;
+        private readonly ITopicWriteOnlyRepository topicWriteOnlyRepository;
         private static Guid UserId;
 
-        public UserDeleteUseCaseTests(IUserDelete userDeleteUseCase, UserPresenter presenter, IUserWriteOnlyRepository userWriteOnlyRepository)
+        public TopicDeleteUseCaseTests(ITopicDeleteUseCase topicDeleteUseCase, TopicPresenter presenter, ITopicWriteOnlyRepository topicWriteOnlyRepository)
         {
-            this.userDeleteUseCase = userDeleteUseCase;
+            this.topicDeleteUseCase = topicDeleteUseCase;
             this.presenter = presenter;
-            this.userWriteOnlyRepository = userWriteOnlyRepository;
+            this.topicWriteOnlyRepository = topicWriteOnlyRepository;
         }
 
         [Fact]
         [TestPriority(1)]
         public void ShouldAddSomeCustomer()
         {
-            var model = UserBuilder.New().Build();
+            var model = TopicBuilder.New().Build();
             UserId = model.Id;
-            var ret = userWriteOnlyRepository.Add(model);
+            var ret = topicWriteOnlyRepository.Add(model);
             ret.Should().Be(1);
         }
 
@@ -42,7 +42,7 @@ namespace XUnitTest.Cases.Application.User.Delete
         public void ShouldDeleteCustomer()
         {
             var request = new UserDeleteRequest(UserId);
-            userDeleteUseCase.Execute(request);
+            topicDeleteUseCase.Execute(request);
             presenter.ViewModel.Should().BeOfType<OkObjectResult>();
         }
 
@@ -51,7 +51,7 @@ namespace XUnitTest.Cases.Application.User.Delete
         public void ShouldDeleteCustomerAndReturnError()
         {
             var request = new UserDeleteRequest(Guid.NewGuid());
-            userDeleteUseCase.Execute(request);
+            topicDeleteUseCase.Execute(request);
             presenter.ViewModel.Should().BeOfType<BadRequestObjectResult>();
         }
     }
