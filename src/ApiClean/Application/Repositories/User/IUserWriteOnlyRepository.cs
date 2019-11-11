@@ -7,16 +7,16 @@ namespace ApiClean.Application.Repositories
 {
     public interface IUserWriteOnlyRepository
     {
-        int Save(User customer);
+        int Save(User user);
 
-        int Add(User customer);
+        int Add(User user);
 
-        int Add(List<User> customers);
+        int Add(List<User> user);
 
         int Delete(Guid id);
 
-        int Delete(User customer);
+        int Delete(User user);
 
-        int Update(User customer);
+        int Update(User user);
     }
 }

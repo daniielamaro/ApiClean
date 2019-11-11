@@ -7,16 +7,16 @@ namespace ApiClean.Application.Repositories
 {
     public interface ITopicWriteOnlyRepository
     {
-        int Save(Topic customer);
+        int Save(Topic topic);
 
-        int Add(Topic customer);
+        int Add(Topic topic);
 
-        int Add(List<Topic> customers);
+        int Add(List<Topic> topic);
 
         int Delete(Guid id);
 
-        int Delete(Topic customer);
+        int Delete(Topic topic);
 
-        int Update(Topic customer);
+        int Update(Topic topic);
     }
 }

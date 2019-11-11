@@ -15,7 +15,7 @@ namespace Application.UseCases.Topic.Save.Handler
             this.topicWriteOnlyRepository = topicWriteOnlyRepository;
         }
 
-        public override void ProcessRequest(PublicationSaveRequest request)
+        public override void ProcessRequest(TopicSaveRequest request)
         {
             var ret = topicWriteOnlyRepository.Save(request.Topic);
             if (ret == 0)
