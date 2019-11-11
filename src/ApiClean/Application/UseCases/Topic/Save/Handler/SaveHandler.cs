@@ -1,6 +1,5 @@
 ﻿using ApiClean.Application.Repositories;
-using Application.UseCases.User.Save;
-using Application.UseCases.User.Save.Handlers;
+using Application.UseCases.Repository.Handler;
 using System;
 
 namespace Application.UseCases.Topic.Save.Handler
@@ -20,8 +19,8 @@ namespace Application.UseCases.Topic.Save.Handler
             if (ret == 0)
                 throw new ArgumentException("Problem to save model");
 
-            if (Sucessor != null)
-                Sucessor.ProcessRequest(request);
+            if (sucessor != null)
+                sucessor.ProcessRequest(request);
         }
     }
 }

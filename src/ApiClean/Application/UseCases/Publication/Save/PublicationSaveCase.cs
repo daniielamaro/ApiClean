@@ -1,17 +1,16 @@
-﻿using Application.Boundaries.User;
+﻿using Application.Boundaries.Publication;
 using Application.UseCases.Publication.Save.Handler;
 using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace Application.UseCases.Publication.Save
 {
     class PublicationSaveCase
     {
-        private readonly IOutputPort<Domain.Publication.Publication> output;
+        private readonly IOutputPortPublication output;
         private readonly ValidateHandler validateHandler;
 
-        public PublicationSaveCase(IOutputPort<Domain.Publication.Publication> output, ValidateHandler validateHandler, SaveHandler saveHandler)
+        public PublicationSaveCase(IOutputPortPublication output, ValidateHandler validateHandler, SaveHandler saveHandler)
         {
             this.output = output;
             this.validateHandler = validateHandler;

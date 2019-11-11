@@ -1,17 +1,14 @@
-﻿using ApiClean.Application.Repositories
-using Application.Boundaries.User;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using ApiClean.Application.Repositories;
+using Application.Boundaries.Publication;
 
 namespace Application.UseCases.Publication.GetAll
 {
     public class PublicationGetAllUseCase :  IPublicationGetAllUseCase
     {
         private readonly IPublicationReadOnlyRepository pubReadOnlyRepository;
-        private readonly IOutputPort<Domain.Publication.Publication> output;
+        private readonly IOutputPortPublication output;
 
-        public PublicationGetAllUseCase(IPublicationReadOnlyRepository pubReadOnlyRepository, IOutputPort<Domain.Publication.Publication> output)
+        public PublicationGetAllUseCase(IPublicationReadOnlyRepository pubReadOnlyRepository, IOutputPortPublication output)
         {
             this.pubReadOnlyRepository = pubReadOnlyRepository;
             this.output = output;

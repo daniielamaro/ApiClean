@@ -9,9 +9,9 @@ namespace WebApi.UseCases.User.Add
     public class UserController : ControllerBase
     {
         private readonly UserPresenter presenter;
-        private readonly IUserSave userSaveUseCase;
+        private readonly IUserSaveUseCase userSaveUseCase;
 
-        public UserController(UserPresenter presenter, IUserSave userSave)
+        public UserController(UserPresenter presenter, IUserSaveUseCase userSave)
         {
             this.presenter = presenter;
             this.userSaveUseCase = userSave;
