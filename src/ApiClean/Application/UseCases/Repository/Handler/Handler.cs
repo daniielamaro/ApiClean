@@ -1,14 +1,14 @@
 ﻿namespace Application.UseCases.Repository.Handler
 {
-    public abstract class Handler<A>
+    public abstract class Handler<T>
     {
-        protected Handler<A> sucessor;
+        protected Handler<T> Sucessor;
 
-        public void SetSucessor(Handler<A> sucessor)
+        public void SetSucessor(Handler<T> sucessor)
         {
-            this.sucessor = sucessor;
+            Sucessor = sucessor;
         }
 
-        public abstract void ProcessRequest(A request);
+        public abstract void ProcessRequest(T request);
     }
 }

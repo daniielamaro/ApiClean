@@ -6,3 +6,8 @@ services:
     build:
       context: .
       dockerfile: WebApi/Dockerfile
+    networks:
+      - apicleanarchitecture-network
+
+networks: 
+  apicleanarchitecture-network:

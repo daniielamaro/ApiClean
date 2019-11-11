@@ -8,16 +8,16 @@ namespace ApiClean.Application.Repositories
 {
     public interface ICommentWriteOnlyRepository
     {
-        int Save(Comment customer);
+        int Save(Comment comment);
 
-        int Add(Comment customer);
+        int Add(Comment comment);
 
-        int Add(List<Comment> customers);
+        int Add(List<Comment> comments);
 
         int Delete(Guid id);
 
-        int Delete(Comment customer);
+        int Delete(Comment comment);
 
-        int Update(Comment customer);
+        int Update(Comment comment);
     }
 }
