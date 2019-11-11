@@ -2,11 +2,11 @@
 {
     public abstract class Handler<T>
     {
-        protected Handler<T> sucessor;
+        protected Handler<T> Sucessor;
 
         public void SetSucessor(Handler<T> sucessor)
         {
-            this.sucessor = sucessor;
+            Sucessor = sucessor;
         }
 
         public abstract void ProcessRequest(T request);

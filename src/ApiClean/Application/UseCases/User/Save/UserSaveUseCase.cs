@@ -1,11 +1,14 @@
 ﻿using Application.Boundaries.Repository;
 using Application.Boundaries.User;
 using Application.UseCases.User.Save.Handlers;
+using Domain.User;
 using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Application.UseCases.User.Save
 {
-    class UserSaveUseCase : IUserSaveUseCase
+    public class UserSaveUseCase : IUserSaveUseCase
     {
         private readonly IOutputPortUser output;
         private readonly ValidateHandler validateHandler;
