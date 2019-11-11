@@ -28,14 +28,14 @@ namespace WebApi.UseCases.User
         public void Standard(Guid id)
            => ViewModel = new OkObjectResult(id);
 
-        public void Standard(Domain.Customer.Customer customer)
-            => ViewModel = new OkObjectResult(new UserResponse(customer.Id, customer.Name, customer.Age, customer.Email));
+        public void Standard(Domain.User.User user)
+            => ViewModel = new OkObjectResult(new UserResponse(user.Id, user.Name, user.Age, user.Email));
 
-        public void Standard(IList<Domain.Customer.Customer> customer)
+        public void Standard(IList<Domain.User.User> user)
         {
             var customersResponse = new List<UserResponse>();
-            customer.ToList().ForEach(s => customersResponse.Add(new UserResponse(s.Id, s.Name, s.Age, s.Email)));
-            ViewModel = new OkObjectResult(customersResponse);
+            customer.ToList().ForEach(s => UserResponse.Add(new UserResponse(s.Id, s.Name, s.Age, s.Email)));
+            ViewModel = new OkObjectResult(UserResponse);
         }
     }
 }

@@ -28,14 +28,14 @@ namespace WebApi.UseCases.Topic
         public void Standard(Guid id)
            => ViewModel = new OkObjectResult(id);
 
-        public void Standard(Domain.Customer.Customer customer)
-            => ViewModel = new OkObjectResult(new UserResponse(customer.Id, customer.Name, customer.Age, customer.Email));
+        public void Standard(Domain.Topic.Topic topic)
+            => ViewModel = new OkObjectResult(new TopicResponse(topic.Id, topic.Name));
 
-        public void Standard(IList<Domain.Customer.Customer> customer)
+        public void Standard(IList<Domain.Topic.Topic> topic)
         {
-            var customersResponse = new List<UserResponse>();
-            customer.ToList().ForEach(s => customersResponse.Add(new UserResponse(s.Id, s.Name, s.Age, s.Email)));
-            ViewModel = new OkObjectResult(customersResponse);
+            var customersResponse = new List<TopicResponse>();
+            customer.ToList().ForEach(t => TopicResponse.Add(new TopicResponse(t.Id, t.Name)));
+            ViewModel = new OkObjectResult(TopicResponse);
         }
     }
 }
