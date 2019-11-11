@@ -8,17 +8,17 @@ namespace ApiClean.Application.Repositories
 {
     public interface IPublicationWriteOnlyRepository
     {
-        int Save(Publication customer);
+        int Save(Publication publication);
 
-        int Add(Publication customer);
+        int Add(Publication publication);
 
-        int Add(List<Publication> customers);
+        int Add(List<Publication> publications);
 
         int Delete(Guid id);
 
-        int Delete(Publication customer);
+        int Delete(Publication publication);
 
-        int Update(Publication customer);
+        int Update(Publication publication);
 
     }
 }

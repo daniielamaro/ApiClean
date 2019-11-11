@@ -3,7 +3,7 @@ version: '3.7'
 services:
   webapi:
     environment:
-      DEMOCLEAN_CONN: Host=db-postgres;Port=5432;Database=ApiClean;User Id=postgres;Password=postgres;
+      APICLEAN_CONN: Host=db-postgres;Port=5432;Database=ApiClean;User Id=postgres;Password=postgres;
     ports:
       - "5000:80"
     networks:
