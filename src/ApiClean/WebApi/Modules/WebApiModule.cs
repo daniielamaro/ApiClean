@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using DemoCleanArchitecture.WebApi.UseCases.Customer;
+using WebApi.UseCases.Topic;
 
 namespace WebApi.Modules
 {
@@ -10,7 +10,7 @@ namespace WebApi.Modules
             builder.RegisterAssemblyTypes(typeof(Startup).Assembly)
                 .AsSelf().InstancePerLifetimeScope();
 
-            builder.RegisterType<CustomerPresenter>().As<Application.Boundaries.Customer.IOutPutPort>().AsSelf().InstancePerLifetimeScope();
+            builder.RegisterType<TopicPresenter>().As<Application.Boundaries.Topic.IOutputPortTopic>().AsSelf().InstancePerLifetimeScope();
         }
     }
 }

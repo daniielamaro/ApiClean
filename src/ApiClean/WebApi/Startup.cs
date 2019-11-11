@@ -63,10 +63,10 @@ namespace WebApi
             });
 
             var builder = new ContainerBuilder();
-            builder.RegisterModule<ApplicationModule>();
-            builder.RegisterModule<Infrastructure.PostgresDataAccess.Module>();
-            builder.RegisterModule<InfrastructureDefaultModule>();
-            builder.RegisterModule<WebApiModule>();
+            //builder.RegisterModule<ApplicationModule>();
+            //builder.RegisterModule<Infrastructure.PostgresDataAccess.Module>();
+            //builder.RegisterModule<InfrastructureDefaultModule>();
+            //builder.RegisterModule<WebApiModule>();
             builder.Populate(services);
 
             var container = builder.Build();
@@ -85,7 +85,7 @@ namespace WebApi
             app.UseRouting();
             app.UseEndpoints(endpoints =>
             {
-                enpoints.MapControllers();
+                endpoints.MapControllers();
             });
 
             app.UseForwardedHeaders(new ForwardedHeadersOptions

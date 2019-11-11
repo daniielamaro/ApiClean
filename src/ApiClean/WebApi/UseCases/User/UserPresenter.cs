@@ -1,4 +1,4 @@
-﻿using ApiClean.Application.Boundaries.Customer;
+﻿using Application.Boundaries.User;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace WebApi.UseCases.User
 {
-    public class UserPresenter : IOutputPort
+    public class UserPresenter : IOutputPortUser
     {
         public IActionResult ViewModel { get; private set; }
 
@@ -27,15 +27,15 @@ namespace WebApi.UseCases.User
 
         public void Standard(Guid id)
            => ViewModel = new OkObjectResult(id);
-
+         
         public void Standard(Domain.User.User user)
-            => ViewModel = new OkObjectResult(new UserResponse(user.Id, user.Name, user.Age, user.Email));
+            => ViewModel = new OkObjectResult(new UserResponse(user.Id, user.Name, user.Email, user.Password));
 
         public void Standard(IList<Domain.User.User> user)
         {
-            var customersResponse = new List<UserResponse>();
-            customer.ToList().ForEach(s => UserResponse.Add(new UserResponse(s.Id, s.Name, s.Age, s.Email)));
-            ViewModel = new OkObjectResult(UserResponse);
+            var usersResponse = new List<UserResponse>();
+            user.ToList().ForEach(s => usersResponse.Add(new UserResponse(s.Id, s.Name, s.Email, s.Password)));
+            ViewModel = new OkObjectResult(usersResponse);
         }
     }
 }

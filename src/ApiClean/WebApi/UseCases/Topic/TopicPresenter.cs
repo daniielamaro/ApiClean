@@ -1,13 +1,12 @@
-﻿using ApiClean.Application.Boundaries.Customer;
+﻿using Application.Boundaries.Topic;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-
 namespace WebApi.UseCases.Topic
 {
-    public class UserPresenter : IOutputPort
+    public class TopicPresenter : IOutputPortTopic
     {
         public IActionResult ViewModel { get; private set; }
 
@@ -33,9 +32,9 @@ namespace WebApi.UseCases.Topic
 
         public void Standard(IList<Domain.Topic.Topic> topic)
         {
-            var customersResponse = new List<TopicResponse>();
-            customer.ToList().ForEach(t => TopicResponse.Add(new TopicResponse(t.Id, t.Name)));
-            ViewModel = new OkObjectResult(TopicResponse);
+            var topicsResponse = new List<TopicResponse>();
+            topic.ToList().ForEach(t => topicsResponse.Add(new TopicResponse(t.Id, t.Name)));
+            ViewModel = new OkObjectResult(topicsResponse);
         }
     }
 }
