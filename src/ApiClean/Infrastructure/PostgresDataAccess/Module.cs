@@ -11,7 +11,7 @@ namespace Infrastructure.PostgresDataAccess
     {
         protected override void Load(ContainerBuilder builder)
         {
-            var connection = Environment.GetEnvironmentVariable("DEMOCLEAN_CONN");
+            var connection = Environment.GetEnvironmentVariable("APICLEAN_CONN");
 
             builder.RegisterAssemblyTypes(typeof(InfrastructureException).Assembly)
                 .Where(type => type.Namespace.Contains("PostgresDataAccess"))

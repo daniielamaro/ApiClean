@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Infrastructure.PostgresDataAccess.Entities.Topic
+namespace Infrastructure.PostgresDataAccess.Entities.User
 {
     public class User
     {
