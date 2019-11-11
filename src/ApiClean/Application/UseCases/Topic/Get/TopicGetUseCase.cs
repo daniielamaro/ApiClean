@@ -11,7 +11,7 @@ namespace Application.UseCases.Topic.Get
         private readonly IOutputPort<Domain.Topic.Topic> output;
         private readonly ITopicReadOnlyRepository topicReadOnlyRepository;
 
-        public TopicGetUseCase(IOutputPort output, ITopicReadOnlyRepository topicReadOnlyRepository)
+        public TopicGetUseCase(IOutputPort<Domain.Topic.Topic> output, ITopicReadOnlyRepository topicReadOnlyRepository)
         {
             this.output = output;
             this.topicReadOnlyRepository = topicReadOnlyRepository;
@@ -24,7 +24,7 @@ namespace Application.UseCases.Topic.Get
                 var customer = topicReadOnlyRepository.GetById(request.TopicId);
                 if (customer == null)
                 {
-                    output.NotFound($"Not found customer with id: {request.TopicId}");
+                    output.NotFound($"Not found topic with id: {request.TopicId}");
                     return;
                 }
                 output.Standard(customer);

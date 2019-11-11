@@ -1,4 +1,4 @@
-﻿using ApiClean.Application.Repositories
+﻿using ApiClean.Application.Repositories;
 using Application.Boundaries.User;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Application.UseCases.Topic.GetAll
 {
-    public class TopicGetAllUseCase :  ITopicGetAllUseCase
+    public class TopicGetAllUseCase : ITopicGetAllUseCase
     {
         private readonly ITopicReadOnlyRepository topicsReadOnlyRepository;
         private readonly IOutputPort<Domain.Topic.Topic> output;

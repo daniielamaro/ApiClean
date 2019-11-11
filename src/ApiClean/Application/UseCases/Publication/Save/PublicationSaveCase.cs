@@ -4,25 +4,25 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Application.UseCases.Topic.Save
+namespace Application.UseCases.Publication.Save
 {
-    public class TopicSaveCase
+    class PublicationSaveCase
     {
-        private readonly IOutputPort<Domain.Topic.Topic> output;
+        private readonly IOutputPort<Domain.Publication.Publication> output;
         private readonly ValidateHandler validateHandler;
 
-        public TopicSaveCase(IOutputPort<Domain.Topic.Topic> output, ValidateHandler validateHandler, SaveHandler saveHandler)
+        public PublicationSaveCase(IOutputPort<Domain.Publication.Publication> output, ValidateHandler validateHandler, SaveHandler saveHandler)
         {
             this.output = output;
             this.validateHandler = validateHandler;
             this.validateHandler.SetSucessor(saveHandler);
         }
-        public void Execute(TopicSaveRequest request)
+        public void Execute(PublicationSaveRequest request)
         {
             try
             {
                 validateHandler.ProcessRequest(request);
-                output.Standard(request.Topic.Id);
+                output.Standard(request.Pub.Id);
             }
             catch (Exception ex)
             {

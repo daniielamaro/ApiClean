@@ -24,7 +24,7 @@ namespace Application.UseCases.Topic.Delete
                 var ret = topicWriteOnlyRepository.Delete(request.TopicId);
                 if (ret == 0)
                 {
-                    output.Error($"Error on process Delete Customer");
+                    output.Error($"Error on process Delete Topic");
                     return;
                 }
                 output.Standard(request.TopicId);

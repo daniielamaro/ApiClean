@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Application.UseCases.Topic
+namespace Application.UseCases.Topic.Save
 {
     public class TopicSaveRequest
     {

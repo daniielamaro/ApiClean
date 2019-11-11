@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Application.UseCases.Topic.Save.Handler
+namespace Application.UseCases.Publication.Save.Handler
 {
-    public class ValidateHandler : Handler<TopicSaveRequest>
+    class ValidateHandler : Handler<PublicationSaveRequest>
     {
-        public override void ProcessRequest(TopicSaveRequest request)
+        public override void ProcessRequest(PublicationSaveRequest request)
         {
             if (!request.Topic.IsValid)
                 throw new ArgumentException("Model invalid");
