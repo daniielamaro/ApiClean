@@ -7,12 +7,8 @@ namespace Domain.Validations
 {
     public class TopicValidator : AbstractValidator<Topic.Topic>
     {
-        private readonly ITopicRepository topicRepository;
-
         public TopicValidator()
         {
-            topicRepository = new TopicRepository();
-
             RuleFor(x => x.Id)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotNull()

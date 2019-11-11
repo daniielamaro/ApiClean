@@ -5,16 +5,14 @@ using System.Text;
 
 namespace Domain.Validations
 {
-    public class CommentValidator : AbstractValidator<Comment>
+    public class CommentValidator : AbstractValidator<Comment.Comment>
     {
-        private readonly IPublicationRepository publicationRepository;
-
         public CommentValidator()
         {
             RuleFor(x => x.Id)
                 .NotNull()
                 .WithMessage("O Id não pode ser nulo.")
-                .NotEmpty()
+                .NotEqual(new Guid())
                 .WithMessage("O comentario não pode estar vazio.");
 
             RuleFor(x => x.Autor)
