@@ -3,13 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Application.UseCases.User.Save.Handlers
+namespace Application.UseCases.Comment.Save.Handlers
 {
-    public class ValidateHandler : Handler<UserSaveRequest>
+    public class ValidateHandler : Handler<CommentSaveRequest>
     {
-        public override void ProcessRequest(UserSaveRequest request)
+        public override void ProcessRequest(CommentSaveRequest request)
         {
-            if (!request.User.IsValid)
+            if (!request.Comment.IsValid)
                 throw new ArgumentException("Model invalid");
 
             if (sucessor != null)
