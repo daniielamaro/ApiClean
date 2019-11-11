@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Application.UseCases.Repository;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -8,7 +9,7 @@ namespace Application.UseCases.Publication.Save.Handler
     {
         public override void ProcessRequest(PublicationSaveRequest request)
         {
-            if (!request.Topic.IsValid)
+            if (!request.Publication.IsValid)
                 throw new ArgumentException("Model invalid");
 
             if (sucessor != null)

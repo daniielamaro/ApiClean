@@ -22,7 +22,7 @@ namespace Application.UseCases.Publication.Save
             try
             {
                 validateHandler.ProcessRequest(request);
-                output.Standard(request.Pub.Id);
+                output.Standard(request.Publication.Id);
             }
             catch (Exception ex)
             {
