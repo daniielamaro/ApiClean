@@ -34,7 +34,7 @@ namespace Infrastructure.PostgresDataAccess.Repositories
             var models = mapper.Map<List<Entities.Topic.Topic>>(topics);
             using (Context context = new Context())
             {
-                context.Users.AddRange(models);
+                context.Topics.AddRange(models);
                 context.SaveChanges();
             }
             return 1;
@@ -45,8 +45,8 @@ namespace Infrastructure.PostgresDataAccess.Repositories
 
             using (var context = new Context())
             {
-                var model = context.Users.FirstOrDefault(u => u.Id == id);
-                context.Users.Remove(model);
+                var model = context.Topics.FirstOrDefault(t => t.Id == id);
+                context.Topics.Remove(model);
                 return context.SaveChanges();
             }
         }
@@ -56,18 +56,18 @@ namespace Infrastructure.PostgresDataAccess.Repositories
 
             using (var context = new Context())
             {
-                var model = context.Users.FirstOrDefault(u => u.Id == user.Id);
-                context.Users.Remove(model);
+                var model = context.Topics.FirstOrDefault(t => t.Id == topic.Id);
+                context.Topics.Remove(model);
                 return context.SaveChanges();
             }
         }
 
         public IList<Topic> GetAll()
         {
-            var list = new List<User>();
+            var list = new List<Topic>();
             using (var context = new Context())
             {
-                list = mapper.Map<List<User>>(context.Users.ToList());
+                list = mapper.Map<List<Topic>>(context.Topics.ToList());
             }
             return list;
         }
@@ -76,7 +76,7 @@ namespace Infrastructure.PostgresDataAccess.Repositories
         {
             using (var context = new Context())
             {
-                return mapper.Map<List<User>>(context.Users.Where(mapper.Map<Expression<Func<Entities.Topic.User, bool>>>(filter)).ToList());
+                return mapper.Map<List<Topic>>(context.Topics.Where(mapper.Map<Expression<Func<Entities.Topic.Topic, bool>>>(filter)).ToList());
             }
         }
 
@@ -84,23 +84,23 @@ namespace Infrastructure.PostgresDataAccess.Repositories
         {
             using (var context = new Context())
             {
-                return mapper.Map<User>(context.Users.FirstOrDefault(u => u.Id == id));
+                return mapper.Map<Topic>(context.Topics.FirstOrDefault(t => t.Id == id));
             }
         }
 
         public int Save(Topic topic)
         {
-            if (GetById(user.Id) == null)
-                return Add(user);
+            if (GetById(topic.Id) == null)
+                return Add(topic);
             else
-                return Update(user);
+                return Update(topic);
         }
 
         public int Update(Topic topic)
         {
             using (var context = new Context())
             {
-                context.Entry(mapper.Map<Entities.Topic.User>(user)).State = EntityState.Modified;
+                context.Entry(mapper.Map<Entities.Topic.Topic>(topic)).State = EntityState.Modified;
                 return context.SaveChanges();
             }
         }

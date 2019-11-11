@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Infrastructure.PostgresDataAccess.Entities.Topic;
+using Infrastructure.PostgresDataAccess.Entities.User;
+using Infrastructure.PostgresDataAccess.Entities.Comment;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.ComponentModel.DataAnnotations;
-using Infrastructure.PostgresDataAccess.Entities.Topic;
 
 namespace Infrastructure
 {
@@ -11,6 +12,7 @@ namespace Infrastructure
     {
         public DbSet<User> Users { get; set; }
         public DbSet<Topic> Topics { get; set; }
+        public DbSet<Comment> Comments { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -33,9 +35,7 @@ namespace Infrastructure
         {
             modelBuilder.ApplyConfiguration(new PostgresDataAccess.Entities.Map.User.UserMap());
             modelBuilder.ApplyConfiguration(new PostgresDataAccess.Entities.Map.Topic.TopicMap());
-
-
-
+            modelBuilder.ApplyConfiguration(new PostgresDataAccess.Entities.Map.Comment.CommentMap());
             modelBuilder.Ignore<ValidationResult>();
             base.OnModelCreating(modelBuilder);
         }

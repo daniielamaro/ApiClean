@@ -20,7 +20,7 @@ namespace Infrastructure.PostgresDataAccess.Repositories
 
         public int Add(User user)
         {
-            var model = mapper.Map<Entities.Topic.User>(user);
+            var model = mapper.Map<Entities.User.User>(user);
             using (Context context = new Context())
             {
                 context.Users.Add(model);
@@ -31,7 +31,7 @@ namespace Infrastructure.PostgresDataAccess.Repositories
 
         public int Add(List<User> users)
         {
-            var models = mapper.Map<List<Entities.Topic.User>>(users);
+            var models = mapper.Map<List<Entities.User.User>>(users);
             using (Context context = new Context())
             {
                 context.Users.AddRange(models);
@@ -74,7 +74,7 @@ namespace Infrastructure.PostgresDataAccess.Repositories
         {
             using (var context = new Context())
             {
-                return mapper.Map<List<User>>(context.Users.Where(mapper.Map<Expression<Func<Entities.Topic.User, bool>>>(filter)).ToList());
+                return mapper.Map<List<User>>(context.Users.Where(mapper.Map<Expression<Func<Entities.User.User, bool>>>(filter)).ToList());
             }
         }
 
@@ -98,7 +98,7 @@ namespace Infrastructure.PostgresDataAccess.Repositories
         {
             using (var context = new Context())
             {
-                context.Entry(mapper.Map<Entities.Topic.User>(user)).State = EntityState.Modified;
+                context.Entry(mapper.Map<Entities.User.User>(user)).State = EntityState.Modified;
                 return context.SaveChanges();
             }            
         }

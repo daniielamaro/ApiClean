@@ -10,7 +10,7 @@ namespace Infrastructure.PostgresDataAccess.Entities.Map.Topic
             builder.ToTable("Topic", "ApiClean");
             builder.HasKey(t => t.Id);
             builder.Property(t => t.Name).IsRequired();
-            builder.Property(t => t.Name).HasMaxLength(150);
+            builder.Property(t => t.Name).HasMaxLength(50);
         }
 
     }
