@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using WebApi.UseCases.Topic;
 using WebApi.UseCases.User;
 using Xunit;
 using Xunit.Frameworks.Autofac;

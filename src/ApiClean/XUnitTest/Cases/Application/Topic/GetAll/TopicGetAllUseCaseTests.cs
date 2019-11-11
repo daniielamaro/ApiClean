@@ -4,17 +4,17 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using WebApi.UseCases.User;
+using WebApi.UseCases.Topic;
 using Xunit;
 
 namespace XUnitTest.Cases.Application.Topic.GetAll
 {
     public class PublicationGetAllUseCaseTests
     {
-        private readonly IUserGetAll userGetAllUseCase;
-        private readonly UserPresenter presenter;
+        private readonly ITopicGetAllUseCase userGetAllUseCase;
+        private readonly TopicPresenter presenter;
 
-        public PublicationGetAllUseCaseTests(IUserGetAll userGetAllUseCase, UserPresenter presenter)
+        public PublicationGetAllUseCaseTests(IUserGetAll userGetAllUseCase, TopicPresenter presenter)
         {
             this.userGetAllUseCase = userGetAllUseCase;
             this.presenter = presenter;

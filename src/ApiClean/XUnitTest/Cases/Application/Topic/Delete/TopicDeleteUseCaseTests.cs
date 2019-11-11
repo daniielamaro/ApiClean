@@ -5,6 +5,7 @@ using DemoCleanArchitecture.Tests.TestCaseOrdering;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using WebApi.UseCases.Topic;
 using Xunit;
 using Xunit.Frameworks.Autofac;
 using XUnitTest.Builders;
