@@ -4,6 +4,7 @@ using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using Tests.TestCaseOrdering;
+using WebApi.UseCases.User;
 using Xunit;
 using Xunit.Frameworks.Autofac;
 using XUnitTest.Builders;
@@ -41,8 +42,8 @@ namespace XUnitTest.Cases.Application.User.Get
         [TestPriority(2)]
         public void ShouldGetCustomerById()
         {
-            var request = new CustomerGetRequest(CustomerId);
-            customerGetUseCase.Execute(request);
+            var request = new UserGetRequest(UserId);
+            userGetUseCase.Execute(request);
             presenter.ViewModel.Should().BeOfType<OkObjectResult>();
         }
 
@@ -50,8 +51,8 @@ namespace XUnitTest.Cases.Application.User.Get
         [TestPriority(2)]
         public void ShouldNotGetCustomerByIdAndReturnNotFound()
         {
-            var request = new CustomerGetRequest(Guid.NewGuid());
-            customerGetUseCase.Execute(request);
+            var request = new UserGetRequest(Guid.NewGuid());
+            userGetUseCase.Execute(request);
             presenter.ViewModel.Should().BeOfType<NotFoundObjectResult>();
         }
     }

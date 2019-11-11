@@ -1,4 +1,5 @@
 ﻿using ApiClean.Application.Repositories;
+using Application.Boundaries.Topic;
 using Application.Boundaries.User;
 using System;
 using System.Collections.Generic;
@@ -9,9 +10,9 @@ namespace Application.UseCases.Topic.GetAll
     public class TopicGetAllUseCase : ITopicGetAllUseCase
     {
         private readonly ITopicReadOnlyRepository topicsReadOnlyRepository;
-        private readonly IOutputPort<Domain.Topic.Topic> output;
+        private readonly IOutputPortTopic output;
 
-        public TopicGetAllUseCase(ITopicReadOnlyRepository topicsReadOnlyRepository, IOutputPort<Domain.Topic.Topic> output)
+        public TopicGetAllUseCase(ITopicReadOnlyRepository topicsReadOnlyRepository, IOutputPortTopic output)
         {
             this.topicsReadOnlyRepository = topicsReadOnlyRepository;
             this.output = output;

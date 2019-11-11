@@ -1,4 +1,4 @@
-﻿using Application.Boundaries.User;
+﻿using Application.Boundaries.Topic;
 using Application.UseCases.Topic.Save.Handler;
 using System;
 using System.Collections.Generic;
@@ -8,10 +8,10 @@ namespace Application.UseCases.Topic.Save
 {
     public class TopicSaveCase
     {
-        private readonly IOutputPort<Domain.Topic.Topic> output;
+        private readonly IOutputPortTopic output;
         private readonly ValidateHandler validateHandler;
 
-        public TopicSaveCase(IOutputPort<Domain.Topic.Topic> output, ValidateHandler validateHandler, SaveHandler saveHandler)
+        public TopicSaveCase(IOutputPortTopic output, ValidateHandler validateHandler, SaveHandler saveHandler)
         {
             this.output = output;
             this.validateHandler = validateHandler;
