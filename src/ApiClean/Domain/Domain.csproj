@@ -4,4 +4,11 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="8.5.1" />
+	<Folder Include="Comment\" />
+    <Folder Include="Topic\" />
+    <Folder Include="Publication\" />
+  </ItemGroup>
+
 </Project>
