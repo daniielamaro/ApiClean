@@ -40,10 +40,6 @@
 
   <ItemGroup>
     <Folder Include="Controllers\" />
-    <Folder Include="UseCases\Topic\Delete\" />
-    <Folder Include="UseCases\Topic\Get\" />
-    <Folder Include="UseCases\Topic\GetAll\" />
-    <Folder Include="UseCases\Topic\Update\" />
     <Folder Include="UseCases\User\Add\" />
     <Folder Include="UseCases\User\Delete\" />
     <Folder Include="UseCases\User\Get\" />
