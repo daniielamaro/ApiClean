@@ -1,10 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using ApiClean.Application.Repositories;
+using Application.Boundaries.User;
+using System;
 
 namespace Application.UseCases.User.Delete
 {
-    class UserDelete
+    public class UserDelete : IUserDelete
     {
+        private readonly IOutputPortUser output;
+        private readonly IUserWriteOnlyRepository userWriteOnlyRepository;
+
+        public UserDelete(IOutputPortUser output, IUserWriteOnlyRepository userWriteOnlyRepository)
+        {
+            this.output = output;
+            this.userWriteOnlyRepository = userWriteOnlyRepository;
+        }
+
+        public void Execute(UserDeleteRequest request)
+        {
+            try
+            {
+                var alfa = userWriteOnlyRepository.Delete(request.UserId);
+                if(alfa == 0)
+                {
+                    output.Standard(request.UserId);
+                }
+            }
+            catch(Exception e)
+            {
+                output.Error($"Error on process: {e.Message}");
+            }
+        }
     }
 }

@@ -1,10 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Application.UseCases.User.Delete
 {
-    class UserDeleteRequest
+    public class UserDeleteRequest
     {
+        public Guid UserId { get; private set; }
+
+        public UserDeleteRequest(Guid userId)
+        {
+            UserId = userId;
+        }
     }
 }
