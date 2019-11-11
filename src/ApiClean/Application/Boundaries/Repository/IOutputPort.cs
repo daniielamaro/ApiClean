@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Application.Boundaries.User
+namespace Application.Boundaries.Repository
 {
     public interface IOutputPort<T>
     {
