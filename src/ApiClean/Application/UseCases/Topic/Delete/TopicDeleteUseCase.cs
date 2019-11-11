@@ -1,17 +1,15 @@
 ﻿using ApiClean.Application.Repositories;
-using Application.Boundaries.User;
+using Application.Boundaries.Topic;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Application.UseCases.Topic.Delete
 {
     public class TopicDeleteUseCase : ITopicDeleteUseCase
     {
-        private readonly IOutputPort<Domain.Topic.Topic> output;
+        private readonly IOutputPortTopic output;
         private readonly ITopicWriteOnlyRepository topicWriteOnlyRepository;
 
-        public TopicDeleteUseCase(IOutputPort<Domain.Topic.Topic> output, ITopicWriteOnlyRepository topicWriteOnlyRepository)
+        public TopicDeleteUseCase(IOutputPortTopic output, ITopicWriteOnlyRepository topicWriteOnlyRepository)
         {
             this.output = output;
             this.topicWriteOnlyRepository = topicWriteOnlyRepository;

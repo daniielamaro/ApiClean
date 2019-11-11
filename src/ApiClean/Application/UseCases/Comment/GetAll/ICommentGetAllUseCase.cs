@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Application.UseCases.Topic.GetAll
+namespace Application.UseCases.Comment.GetAll
 {
-    public interface ITopicGetAllUseCase
+    public interface ICommentGetAllUseCase
     {
         void Execute();
-
     }
 }
