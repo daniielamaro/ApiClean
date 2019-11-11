@@ -1,4 +1,5 @@
-﻿using Application.UseCases.Topic.Save;
+﻿using Application.UseCases.Publication.Save;
+using Application.UseCases.Topic.Save;
 using DemoCleanArchitecture.Tests.TestCaseOrdering;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
@@ -6,19 +7,19 @@ using System;
 using Xunit;
 using Xunit.Frameworks.Autofac;
 
-namespace XUnitTest.Cases.Application.Topic.Save
+namespace XUnitTest.Cases.Application.Publication.Save
 {
     [UseAutofacTestFramework]
     [TestCaseOrderer("ApiClean.Tests.TestCaseOrdering.PriorityOrderer", "ApiClean.Tests")]
     public class UserSaveUseCaseTests
     {
-        private readonly ITopicSaveCase topicSaveUseCase;
-        private readonly TopicPresenter presenter;
-        private static Guid TopicId;
+        private readonly IPublicationSaveCase publicationSaveUseCase;
+        private readonly PublicationPresenter presenter;
+        private static Guid PublicationId;
 
-        public UserSaveUseCaseTests(ITopicSaveCase topicSaveUseCase, TopicPresenter presenter)
+        public UserSaveUseCaseTests(IPublicationSaveCase publicationSaveUseCase, PublicationPresenter presenter)
         {
-            this.topicSaveUseCase = topicSaveUseCase;
+            this.publicationSaveUseCase = publicationSaveUseCase;
             this.presenter = presenter;
         }
 
@@ -26,9 +27,9 @@ namespace XUnitTest.Cases.Application.Topic.Save
         [TestPriority(1)]
         public void ShouldAddNewCustomerAndReturnOK()
         {
-            var request = new TopicSaveRequest("TopicTest");
-            UserId = request.Topic.Id;
-            topicSaveUseCase.Execute(request);
+            var request = new PublicationSaveRequest("TopicTest");
+            PublicationId = request.Publication.Id;
+            publicationSaveUseCase.Execute(request);
             presenter.ViewModel.Should().BeOfType<OkObjectResult>();
         }
 
@@ -37,7 +38,7 @@ namespace XUnitTest.Cases.Application.Topic.Save
         public void ShouldUpdateCustomerAndReturnOK()
         {
             var request = new TopicSaveRequest("TopicTestUpdate");
-            topicSaveUseCase.Execute(request);
+            publicationSaveUseCase.Execute(request);
             presenter.ViewModel.Should().BeOfType<OkObjectResult>();
         }
 
@@ -45,15 +46,15 @@ namespace XUnitTest.Cases.Application.Topic.Save
         public void ShouldNotAddNewCustomerAndReturnError()
         {
             var request = new TopicSaveRequest("");
-            topicSaveUseCase.Execute(request);
+            publicationSaveUseCase.Execute(request);
             presenter.ViewModel.Should().BeOfType<BadRequestObjectResult>();
         }
 
         [Fact]
         public void ShouldNotUpdateCustomerAndReturnError()
         {
-            var request = new TopicSaveRequest(TopicId, "");
-            topicSaveUseCase.Execute(request);
+            var request = new TopicSaveRequest(PublicationId, "");
+            publicationSaveUseCase.Execute(request);
             presenter.ViewModel.Should().BeOfType<BadRequestObjectResult>();
         }
     }

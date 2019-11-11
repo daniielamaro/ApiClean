@@ -1,4 +1,4 @@
-﻿using Application.Boundaries.Repository;
+﻿using Application.Boundaries.User;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace WebApi.UseCases.User
 {
-    public class UserPresenter : IOutputPort<Domain.User.User>
+    public class UserPresenter : IOutputPortUser
     {
         public IActionResult ViewModel { get; private set; }
 

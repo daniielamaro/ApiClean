@@ -1,16 +1,15 @@
-﻿using Application.Boundaries.Repository;
-using Application.Boundaries.User;
+﻿using Application.Boundaries.User;
 using Application.UseCases.User.Save.Handlers;
 using System;
 
 namespace Application.UseCases.User.Save
 {
-    class UserSave : IUserSave
+    class UserSaveUseCase : IUserSaveUseCase
     {
         private readonly IOutputPortUser output;
         private readonly ValidateHandler validateHandler;
 
-        public UserSave(IOutputPortUser output, ValidateHandler validateHandler, SaveHandler saveHandler)
+        public UserSaveUseCase(IOutputPortUser output, ValidateHandler validateHandler, SaveHandler saveHandler)
         {
             this.output = output;
             this.validateHandler = validateHandler;

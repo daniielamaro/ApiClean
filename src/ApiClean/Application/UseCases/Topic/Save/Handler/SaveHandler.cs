@@ -19,8 +19,8 @@ namespace Application.UseCases.Topic.Save.Handler
             if (ret == 0)
                 throw new ArgumentException("Problem to save model");
 
-            if (Sucessor != null)
-                Sucessor.ProcessRequest(request);
+            if (sucessor != null)
+                sucessor.ProcessRequest(request);
         }
     }
 }

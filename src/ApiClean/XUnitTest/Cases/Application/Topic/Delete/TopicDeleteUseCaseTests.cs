@@ -13,14 +13,14 @@ namespace XUnitTest.Cases.Application.Topic.Delete
 {
     [UseAutofacTestFramework]
     [TestCaseOrderer("ApiClean.Tests.TestCaseOrdering.PriorityOrderer", "ApiClean.Tests")]
-    public class TopicDeleteUseCaseTests
+    public class PublicationDeleteUseCaseTests
     {
         private readonly ITopicDeleteUseCase topicDeleteUseCase;
         private readonly TopicPresenter presenter;
         private readonly ITopicWriteOnlyRepository topicWriteOnlyRepository;
         private static Guid UserId;
 
-        public TopicDeleteUseCaseTests(ITopicDeleteUseCase topicDeleteUseCase, TopicPresenter presenter, ITopicWriteOnlyRepository topicWriteOnlyRepository)
+        public PublicationDeleteUseCaseTests(ITopicDeleteUseCase topicDeleteUseCase, TopicPresenter presenter, ITopicWriteOnlyRepository topicWriteOnlyRepository)
         {
             this.topicDeleteUseCase = topicDeleteUseCase;
             this.presenter = presenter;

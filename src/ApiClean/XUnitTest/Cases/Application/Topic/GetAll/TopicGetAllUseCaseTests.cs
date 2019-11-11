@@ -9,12 +9,12 @@ using Xunit;
 
 namespace XUnitTest.Cases.Application.Topic.GetAll
 {
-    public class TopicGetAllUseCaseTests
+    public class PublicationGetAllUseCaseTests
     {
         private readonly IUserGetAll userGetAllUseCase;
         private readonly UserPresenter presenter;
 
-        public TopicGetAllUseCaseTests(IUserGetAll userGetAllUseCase, UserPresenter presenter)
+        public PublicationGetAllUseCaseTests(IUserGetAll userGetAllUseCase, UserPresenter presenter)
         {
             this.userGetAllUseCase = userGetAllUseCase;
             this.presenter = presenter;

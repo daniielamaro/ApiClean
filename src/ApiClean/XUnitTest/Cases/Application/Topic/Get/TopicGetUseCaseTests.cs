@@ -16,7 +16,7 @@ namespace XUnitTest.Cases.Application.Topic.Get
 {
     [UseAutofacTestFramework]
     [TestCaseOrderer("ApiClean.Tests.TestCaseOrdering.PriorityOrderer", "ApiClean.Tests")]
-    public class TopicGetUseCaseTests
+    public class PublicationGetUseCaseTests
     {
         public class CustomerGetUseCaseTests
         {

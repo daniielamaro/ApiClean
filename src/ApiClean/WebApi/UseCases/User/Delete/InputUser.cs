@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace WebApi.UseCases.User.Delete
 {
     public class InputUser
     {
+        [Required]
+        public Guid UserId { get; set; }
     }
 }

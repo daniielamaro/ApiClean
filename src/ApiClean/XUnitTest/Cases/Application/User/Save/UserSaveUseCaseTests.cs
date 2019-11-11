@@ -14,7 +14,7 @@ namespace XUnitTest.Cases.Application.User.Save
     [UseAutofacTestFramework]
     [TestCaseOrderer("ApiClean.Tests.TestCaseOrdering.PriorityOrderer", "ApiClean.Tests")]
 
-    public class UserSaveUseCaseTests
+    public class TopicSaveUseCaseTests
     {
         private readonly IUserSave userSaveUseCase;
         private readonly UserPresenter presenter;
