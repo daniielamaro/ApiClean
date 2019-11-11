@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Application.UseCases.User.Delete
+﻿namespace Application.UseCases.User.Delete
 {
-    class IUserDelete
+    public interface IUserDelete
     {
+        void Execute(UserDeleteRequest request);
     }
 }

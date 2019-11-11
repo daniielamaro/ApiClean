@@ -1,10 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Application.UseCases.User.Get
 {
-    class UserGetRequest
+    public class UserGetRequest
     {
+        public Guid UserId { get; private set; }
+
+        public UserGetRequest(Guid userId)
+        {
+            UserId = userId;
+        }
     }
 }

@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Application.UseCases.User.Get
+﻿namespace Application.UseCases.User.Get
 {
-    class IUserGet
+    public interface IUserGet
     {
+        void Execute(UserGetRequest request);
     }
 }
