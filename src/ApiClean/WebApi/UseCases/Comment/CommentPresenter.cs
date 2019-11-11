@@ -1,13 +1,12 @@
-﻿using Application.Boundaries.User;
+﻿using Application.Boundaries.Comment;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-
-namespace WebApi.UseCases.User
+namespace WebApi.UseCases.Comment
 {
-    public class UserPresenter : IOutputPortUser
+    public class CommentPresenter : IOutputPortComment
     {
         public IActionResult ViewModel { get; private set; }
 
@@ -15,7 +14,7 @@ namespace WebApi.UseCases.User
         {
             var problemDetails = new ProblemDetails()
             {
-                Title = "An error as ocurred",
+                Title = "An error occurred",
                 Detail = message
             };
 
@@ -26,15 +25,15 @@ namespace WebApi.UseCases.User
             => ViewModel = new NotFoundObjectResult(message);
 
         public void Standard(Guid id)
-           => ViewModel = new OkObjectResult(id);
+            => ViewModel = new OkObjectResult(id);
 
-        public void Standard(Domain.User.User user)
-            => ViewModel = new OkObjectResult(new UserResponse(user.Id, user.Name, user.Email, user.Password));
+        public void Standard(Domain.Comment.Comment comment)
+            => ViewModel = new OkObjectResult(new CommentResponse(comment.Id, comment.Autor, comment.Content));
 
-        public void Standard(IList<Domain.User.User> user)
+        public void Standard(IList<Domain.Comment.Comment> comments)
         {
-            var customersResponse = new List<UserResponse>();
-            user.ToList().ForEach(s => customersResponse.Add(new UserResponse(s.Id, s.Name, s.Email, s.Password)));
+            var customersResponse = new List<CommentResponse>();
+            comments.ToList().ForEach(s => customersResponse.Add(new CommentResponse(s.Id, s.Autor, s.Content)));
             ViewModel = new OkObjectResult(customersResponse);
         }
     }

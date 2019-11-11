@@ -32,4 +32,11 @@
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="UseCases\Comment\Delete\" />
+    <Folder Include="UseCases\Comment\GetAll\" />
+    <Folder Include="UseCases\Comment\Get\" />
+    <Folder Include="UseCases\Comment\Update\" />
+  </ItemGroup>
+
 </Project>
