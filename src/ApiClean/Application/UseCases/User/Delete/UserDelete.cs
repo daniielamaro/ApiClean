@@ -1,4 +1,5 @@
 ﻿using ApiClean.Application.Repositories;
+using Application.Boundaries.User;
 using System;
 
 namespace Application.UseCases.User.Delete

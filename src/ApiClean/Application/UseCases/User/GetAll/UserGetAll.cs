@@ -10,7 +10,7 @@ namespace Application.UseCases.User.GetAll
         private readonly IUserReadOnlyRepository userReadOnlyRepository;
         private readonly IOutputPortUser output;
 
-        public UserGetAll(IUserReadOnlyRepository userReadOnlyRepository, IOutputPotUser output)
+        public UserGetAll(IUserReadOnlyRepository userReadOnlyRepository, IOutputPortUser output)
         {
             this.userReadOnlyRepository = userReadOnlyRepository;
             this.output = output;
