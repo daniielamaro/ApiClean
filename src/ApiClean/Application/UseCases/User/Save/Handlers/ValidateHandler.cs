@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Application.UseCases.Repository.Handler;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -11,8 +12,8 @@ namespace Application.UseCases.User.Save.Handlers
             if (!request.User.IsValid)
                 throw new ArgumentException("Model invalid");
 
-            if (Sucessor != null)
-                Sucessor.ProcessRequest(request);
+            if (sucessor != null)
+                sucessor.ProcessRequest(request);
         }
     }
 }
