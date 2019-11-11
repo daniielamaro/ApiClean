@@ -8,6 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="UseCases\NovaPasta1\**" />
+    <Content Remove="UseCases\NovaPasta1\**" />
+    <EmbeddedResource Remove="UseCases\NovaPasta1\**" />
+    <None Remove="UseCases\NovaPasta1\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Autofac.Configuration" Version="4.1.0" />
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="5.0.1" />
     <PackageReference Include="AutoMapper" Version="9.0.0" />
@@ -20,6 +27,11 @@
 
   <ItemGroup>
     <Folder Include="Controllers\" />
+    <Folder Include="UseCases\Topic\Add\" />
+    <Folder Include="UseCases\Topic\Delete\" />
+    <Folder Include="UseCases\Topic\Get\" />
+    <Folder Include="UseCases\Topic\GetAll\" />
+    <Folder Include="UseCases\Topic\Update\" />
     <Folder Include="UseCases\User\Add\" />
     <Folder Include="UseCases\User\Delete\" />
     <Folder Include="UseCases\User\Get\" />
