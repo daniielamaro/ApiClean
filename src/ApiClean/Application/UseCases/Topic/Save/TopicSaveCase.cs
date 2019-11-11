@@ -1,8 +1,6 @@
 ﻿using Application.Boundaries.Topic;
 using Application.UseCases.Topic.Save.Handler;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Application.UseCases.Topic.Save
 {

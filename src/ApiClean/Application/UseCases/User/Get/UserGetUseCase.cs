@@ -4,7 +4,7 @@ using System;
 
 namespace Application.UseCases.User.Get
 {
-    public class UserGetUseCase
+    public class UserGetUseCase : IUserGetUseCase
     {
         private readonly IUserReadOnlyRepository userReadOnlyRepository;
         private readonly IOutputPortUser output;

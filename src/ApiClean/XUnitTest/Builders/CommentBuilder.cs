@@ -1,8 +1,6 @@
 ﻿using Domain.Comment;
 using Domain.User;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace XUnitTest.Builders
 {
