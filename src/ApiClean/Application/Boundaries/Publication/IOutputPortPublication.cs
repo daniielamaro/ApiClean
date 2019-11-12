@@ -7,5 +7,6 @@ namespace Application.Boundaries.Publication
 {
     public interface IOutputPortPublication : IOutputPort<Domain.Publication.Publication>
     {
+
     }
 }

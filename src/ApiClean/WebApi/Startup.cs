@@ -105,8 +105,7 @@ namespace WebApi
                 };
             });
 
-            app.UseSwaggerUi3(config => config.TransformToExternalPath = (route, request) => ExtractPath(request) + route);
-            //Redireciona swagger como pagina inicial
+            app.UseSwaggerUi3(config => config.TransformToExternalPath = (route, request) => ExtractPath(request) + route);            
             var option = new RewriteOptions();
             option.AddRedirect("^$", "swagger");
 
