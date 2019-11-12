@@ -4,12 +4,12 @@ using System;
 
 namespace Application.UseCases.User.Delete
 {
-    public class UserDeleteUseCase : IUserDeleteUseCase
+    public class UserDelete : IUserDelete
     {
         private readonly IOutputPortUser output;
         private readonly IUserWriteOnlyRepository userWriteOnlyRepository;
 
-        public UserDeleteUseCase(IOutputPortUser output, IUserWriteOnlyRepository userWriteOnlyRepository)
+        public UserDelete(IOutputPortUser output, IUserWriteOnlyRepository userWriteOnlyRepository)
         {
             this.output = output;
             this.userWriteOnlyRepository = userWriteOnlyRepository;

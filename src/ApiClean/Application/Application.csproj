@@ -17,7 +17,6 @@
     <Folder Include="UseCases\Publication\GetAll\" />
     <Folder Include="UseCases\Publication\Get\" />
     <Folder Include="UseCases\Publication\Save\" />
-    <Folder Include="UseCases\Topic\Delete\" />
     <Folder Include="UseCases\Topic\GetAll\" />
     <Folder Include="UseCases\Topic\Get\" />
     <Folder Include="UseCases\Topic\Save\" />

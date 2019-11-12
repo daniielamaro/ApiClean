@@ -1,6 +1,9 @@
 ﻿using ApiClean.Application.Repositories;
 using Application.Boundaries.Topic;
+using Application.Boundaries.User;
 using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Application.UseCases.Topic.Delete
 {
