@@ -21,7 +21,7 @@ namespace WebApi.UseCases.Publication.Add
         [Required]
         public DateTime DateCreated { get; private set; }
         [Required]
-        public List<Comment> Comments { get; private set; }
+        public List<Domain.Comment.Comment> Comments { get; private set; }
         [Required]
         public Domain.Topic.Topic Topic { get; private set; }
     }
