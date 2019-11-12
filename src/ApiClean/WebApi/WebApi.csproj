@@ -39,7 +39,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
     <Folder Include="UseCases\Topic\Delete\" />
     <Folder Include="UseCases\Topic\Get\" />
     <Folder Include="UseCases\Topic\GetAll\" />
