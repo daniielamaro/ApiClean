@@ -1,6 +1,6 @@
-﻿using ApiClean.Application.Repositories;
-using Application.Boundaries.Topic;
-using Application.Boundaries.User;
+﻿using ApiClean.Application.Boundaries.Topic;
+using ApiClean.Application.Boundaries.User;
+using ApiClean.Application.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Text;

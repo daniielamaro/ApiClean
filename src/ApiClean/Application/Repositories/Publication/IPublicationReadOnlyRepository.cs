@@ -1,4 +1,4 @@
-﻿using Domain.Publication;
+﻿using ApiClean.Domain.Publication;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;

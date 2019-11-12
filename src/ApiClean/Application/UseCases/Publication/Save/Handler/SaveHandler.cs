@@ -1,5 +1,5 @@
 ﻿using ApiClean.Application.Repositories;
-using Application.UseCases.Repository.Handler;
+using ApiClean.Application.UseCases.Repository.Handler;
 using System;
 using System.Collections.Generic;
 using System.Text;

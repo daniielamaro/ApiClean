@@ -1,5 +1,5 @@
-﻿using ApiClean.Application.Repositories;
-using Application.Boundaries.Comment;
+﻿using ApiClean.Application.Boundaries.Comment;
+using ApiClean.Application.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Text;

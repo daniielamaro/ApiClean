@@ -1,4 +1,4 @@
-﻿using Domain.User;
+﻿using ApiClean.Domain.User;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;

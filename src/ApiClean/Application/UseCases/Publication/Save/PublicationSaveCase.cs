@@ -1,6 +1,6 @@
-﻿using Application.Boundaries.Publication;
-using Application.Boundaries.User;
-using Application.UseCases.Publication.Save.Handler;
+﻿using ApiClean.Application.Boundaries.Publication;
+using ApiClean.Application.Boundaries.User;
+using ApiClean.Application.UseCases.Publication.Save.Handler;
 using System;
 using System.Collections.Generic;
 using System.Text;

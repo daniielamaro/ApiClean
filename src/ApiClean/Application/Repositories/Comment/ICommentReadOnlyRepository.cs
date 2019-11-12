@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Domain.Comment;
+using ApiClean.Domain.Comment;
 using System.Text;
 using System.Linq.Expressions;
 

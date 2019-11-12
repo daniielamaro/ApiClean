@@ -1,5 +1,4 @@
-﻿
-using Application.UseCases.Repository.Handler;
+﻿using ApiClean.Application.UseCases.Repository.Handler;
 using System;
 
 namespace ApiClean.Application.UseCases.Topic.Save.Handler

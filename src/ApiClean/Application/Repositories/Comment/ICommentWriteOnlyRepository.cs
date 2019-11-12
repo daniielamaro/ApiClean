@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using Domain.Comment;
+using ApiClean.Domain.Comment;
 using System.Text;
 
 namespace ApiClean.Application.Repositories

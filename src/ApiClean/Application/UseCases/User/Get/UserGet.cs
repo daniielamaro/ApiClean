@@ -1,5 +1,5 @@
-﻿using ApiClean.Application.Repositories;
-using Application.Boundaries.User;
+﻿using ApiClean.Application.Boundaries.User;
+using ApiClean.Application.Repositories;
 using System;
 
 namespace ApiClean.Application.UseCases.User.Get

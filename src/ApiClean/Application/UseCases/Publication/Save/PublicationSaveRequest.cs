@@ -7,7 +7,7 @@ namespace ApiClean.Application.UseCases.Publication.Save
     public class PublicationSaveRequest
     {
         
-        public Domain.Publication.Publication Publication { get; private set; }
+        public ApiClean.Domain.Publication.Publication Publication { get; private set; }
 
 
         public PublicationSaveRequest(Domain.User.User autor, string title, string content, DateTime dateCreated, List<Domain.Comment.Comment> comment, Domain.Topic.Topic topic)

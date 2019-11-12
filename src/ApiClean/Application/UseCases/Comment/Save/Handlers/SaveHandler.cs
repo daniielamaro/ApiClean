@@ -1,7 +1,7 @@
 ﻿using System;
-using Application.UseCases.Repository.Handler;
 using System.Text;
 using ApiClean.Application.Repositories;
+using ApiClean.Application.UseCases.Repository.Handler;
 
 namespace ApiClean.Application.UseCases.Comment.Save.Handlers
 {

@@ -1,7 +1,7 @@
 ﻿using ApiClean.Application.UseCases.Comment.Save.Handlers;
-using Application.Boundaries.Topic;
-using Application.Boundaries.User;
-using Application.UseCases.Topic.Save.Handler;
+using ApiClean.Application.Boundaries.Topic;
+using ApiClean.Application.Boundaries.User;
+using ApiClean.Application.UseCases.Topic.Save.Handler;
 using System;
 using System.Collections.Generic;
 using System.Text;
