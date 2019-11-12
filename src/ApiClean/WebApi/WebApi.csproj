@@ -43,6 +43,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="UseCases\Topic\Delete\" />
+    <Folder Include="UseCases\Topic\Get\" />
+    <Folder Include="UseCases\Topic\GetAll\" />
+    <Folder Include="UseCases\Topic\Update\" />
     <Folder Include="UseCases\User\Add\" />
     <Folder Include="UseCases\User\Delete\" />
     <Folder Include="UseCases\User\Get\" />
@@ -56,7 +60,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="UseCases\Comment\Delete\" />
     <Folder Include="UseCases\Comment\GetAll\" />
     <Folder Include="UseCases\Comment\Get\" />
     <Folder Include="UseCases\Comment\Update\" />
