@@ -1,8 +1,8 @@
-﻿using Application.Boundaries.User;
-using Application.UseCases.User.Save.Handlers;
+﻿using ApiClean.Application.Boundaries.User;
+using ApiClean.Application.UseCases.Comment.Save.Handlers;
 using System;
 
-namespace Application.UseCases.User.Save
+namespace ApiClean.Application.UseCases.User.Save
 {
     class UserSave : IUserSave
     {

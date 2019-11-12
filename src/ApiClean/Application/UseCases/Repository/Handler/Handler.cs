@@ -1,4 +1,4 @@
-﻿namespace Application.UseCases.Repository.Handler
+﻿namespace ApiClean.Application.UseCases.Repository.Handler
 {
     public abstract class Handler<T>
     {

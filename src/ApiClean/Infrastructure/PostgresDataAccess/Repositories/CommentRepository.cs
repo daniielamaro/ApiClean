@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 using Domain.Comment;
 using System;
 
-namespace Infrastructure.PostgresDataAccess.Repositories
+namespace ApiClean.Infrastructure.PostgresDataAccess.Repositories
 {
     public class CommentRepository : ICommentReadOnlyRepository, ICommentWriteOnlyRepository
     {

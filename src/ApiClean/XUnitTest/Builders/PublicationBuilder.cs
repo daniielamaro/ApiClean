@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace XUnitTest.Builders
+namespace ApiClean.Tests.XUnitTest.Builders
 {
     public class PublicationBuilder
     {

@@ -1,4 +1,4 @@
-﻿namespace Application.UseCases.User.Delete
+﻿namespace ApiClean.Application.UseCases.User.Delete
 {
     public interface IUserDelete
     {

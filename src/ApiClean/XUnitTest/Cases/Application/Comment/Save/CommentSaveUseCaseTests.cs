@@ -9,7 +9,7 @@ using WebApi.UseCases.Comment;
 using Xunit;
 using Xunit.Frameworks.Autofac;
 
-namespace XUnitTest.Cases.Application.Comment.Save
+namespace ApiClean.Tests.XUnitTest.Cases.Application.Comment.Save
 {
     [UseAutofacTestFramework]
     [TestCaseOrderer("ApiClean.Tests.TestCaseOrdering.PriorityOrderer", "ApiClean.Tests")]

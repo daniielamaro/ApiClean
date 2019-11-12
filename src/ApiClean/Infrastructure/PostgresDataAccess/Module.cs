@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 
-namespace Infrastructure.PostgresDataAccess
+namespace ApiClean.Infrastructure.PostgresDataAccess
 {
     public class Module : Autofac.Module
     {

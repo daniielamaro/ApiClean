@@ -1,5 +1,5 @@
-﻿using Application.UseCases.User.Save;
-using DemoCleanArchitecture.Tests.TestCaseOrdering;
+﻿using ApiClean.Application.UseCases.User.Save;
+using ApiClean.Tests.TestCaseOrdering;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -9,12 +9,12 @@ using WebApi.UseCases.User;
 using Xunit;
 using Xunit.Frameworks.Autofac;
 
-namespace XUnitTest.Cases.Application.User.Save
+namespace ApiClean.Tests.XUnitTest.Cases.Application.User.Save
 {
     [UseAutofacTestFramework]
     [TestCaseOrderer("ApiClean.Tests.TestCaseOrdering.PriorityOrderer", "ApiClean.Tests")]
 
-    public class TopicSaveUseCaseTests
+    public class UserSaveUseCaseTests
     {
         private readonly IUserSave userSaveUseCase;
         private readonly UserPresenter presenter;

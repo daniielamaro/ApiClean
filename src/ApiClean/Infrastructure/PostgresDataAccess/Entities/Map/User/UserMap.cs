@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Infrastructure.PostgresDataAccess.Entities.Map.User
+namespace ApiClean.Infrastructure.PostgresDataAccess.Entities.Map.User
 {
     public class UserMap : IEntityTypeConfiguration<Entities.User.User>
     {

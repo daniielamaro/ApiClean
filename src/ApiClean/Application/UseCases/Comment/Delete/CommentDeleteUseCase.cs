@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Application.UseCases.Comment.Delete
+namespace ApiClean.Application.UseCases.Comment.Delete
 {
     public class CommentDeleteUseCase : ICommentDeleteUseCase
     {

@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using FluentValidation.Results;
 using FluentValidation;
 
-namespace Domain
+namespace ApiClean.Domain
 {
     public class Entity : IEntity
     {

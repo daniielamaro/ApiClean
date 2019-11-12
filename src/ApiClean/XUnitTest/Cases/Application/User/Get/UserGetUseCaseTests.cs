@@ -9,9 +9,10 @@ using System.Text;
 using WebApi.UseCases.User;
 using Xunit;
 using Xunit.Frameworks.Autofac;
-using XUnitTest.Builders;
+using ApiClean.Tests.XUnitTest.Builders;
+using ApiClean.Application.UseCases.User.Get;
 
-namespace XUnitTest.Cases.Application.User.Get
+namespace ApiClean.Tests.XUnitTest.Cases.Application.User.Get
 {
     [UseAutofacTestFramework]
     [TestCaseOrderer("ApiClean.Tests.TestCaseOrdering.PriorityOrderer", "ApiClean.Tests")]

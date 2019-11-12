@@ -10,7 +10,7 @@ using WebApi.UseCases.Comment;
 using WebApi.UseCases.User;
 using Xunit;
 
-namespace XUnitTest.Cases.Application.Comment.GetAll
+namespace ApiClean.Tests.XUnitTest.Cases.Application.Comment.GetAll
 {
     public class CommentGetAllUseCaseTests
     {

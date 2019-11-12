@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Application.Boundaries.Repository
+namespace ApiClean.Application.Boundaries.Repository
 {
     public interface IOutputPort<T>
     {

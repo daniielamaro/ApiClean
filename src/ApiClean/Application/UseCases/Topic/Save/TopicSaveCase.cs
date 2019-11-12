@@ -1,11 +1,12 @@
-﻿using Application.Boundaries.Topic;
+﻿using ApiClean.Application.UseCases.Comment.Save.Handlers;
+using Application.Boundaries.Topic;
 using Application.Boundaries.User;
 using Application.UseCases.Topic.Save.Handler;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Application.UseCases.Topic.Save
+namespace ApiClean.Application.UseCases.Topic.Save
 {
     public class TopicSaveCase
     {

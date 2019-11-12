@@ -3,9 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Application.Boundaries.Publication
+namespace ApiClean.Application.Boundaries.Publication
 {
     public interface IOutputPortPublication : IOutputPort<Domain.Publication.Publication>
     {
+
     }
 }

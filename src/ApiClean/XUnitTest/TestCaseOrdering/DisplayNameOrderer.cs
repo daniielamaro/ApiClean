@@ -3,7 +3,7 @@ using System.Linq;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace DemoCleanArchitecture.Tests.TestCaseOrdering
+namespace ApiClean.Tests.TestCaseOrdering
 {
     public class DisplayNameOrderer : ITestCollectionOrderer
     {

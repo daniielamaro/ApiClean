@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Application.UseCases.Comment.Save
+namespace ApiClean.Application.UseCases.Comment.Save
 {
     public class CommentSaveRequest
     {

@@ -1,4 +1,4 @@
-﻿namespace Application.UseCases.User.GetAll
+﻿namespace ApiClean.Application.UseCases.User.GetAll
 {
     public interface IUserGetAll
     {

@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Application.UseCases.Comment.GetAll
+namespace ApiClean.Application.UseCases.Comment.GetAll
 {
     public class CommentGetAllUseCase : ICommentGetAllUseCase
     {

@@ -10,9 +10,9 @@ using System;
 using WebApi.UseCases.Comment;
 using Xunit;
 using Xunit.Frameworks.Autofac;
-using XUnitTest.Builders;
+using ApiClean.Tests.XUnitTest.Builders;
 
-namespace XUnitTest.Cases.Application.Comment.Delete
+namespace ApiClean.Tests.XUnitTest.Cases.Application.Comment.Delete
 {
     [UseAutofacTestFramework]
     [TestCaseOrderer("ApiClean.Tests.TestCaseOrdering.PriorityOrderer", "ApiClean.Tests")]

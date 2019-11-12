@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 using WebApi.UseCases.User;
 
-namespace XUnitTest.Cases.Application.User.GetAll
+namespace ApiClean.Tests.XUnitTest.Cases.Application.User.GetAll
 {
     class UserGetAllUseCaseTests
     {

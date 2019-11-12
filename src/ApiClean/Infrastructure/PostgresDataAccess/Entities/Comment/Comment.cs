@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 
 
-namespace Infrastructure.PostgresDataAccess.Entities.Comment
+namespace ApiClean.Infrastructure.PostgresDataAccess.Entities.Comment
 {
     public class Comment
     {

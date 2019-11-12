@@ -3,7 +3,7 @@ using Application.Boundaries.User;
 using System;
 
 
-namespace Application.UseCases.User.GetAll
+namespace ApiClean.Application.UseCases.User.GetAll
 {
     public class UserGetAll : IUserGetAll
     {

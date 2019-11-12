@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Infrastructure.PostgresDataAccess.Entities.Map.Comment
+namespace ApiClean.Infrastructure.PostgresDataAccess.Entities.Map.Comment
 {
     public class CommentMap : IEntityTypeConfiguration<Entities.Comment.Comment>
     {

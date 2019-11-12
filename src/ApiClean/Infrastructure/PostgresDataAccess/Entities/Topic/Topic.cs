@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Infrastructure.PostgresDataAccess.Entities.Topic
+namespace ApiClean.Infrastructure.PostgresDataAccess.Entities.Topic
 {
     public class Topic
     {

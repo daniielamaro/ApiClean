@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Application.UseCases.Topic.Save
+namespace ApiClean.Application.UseCases.Topic.Save
 {
     public interface ITopicSaveCase
     {

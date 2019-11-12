@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel.DataAnnotations.Schema;
-using Domain.Validations;
+using ApiClean.Domain.Validations;
 
-namespace Domain.User
+namespace ApiClean.Domain.User
 {
     public class User : Entity
     {

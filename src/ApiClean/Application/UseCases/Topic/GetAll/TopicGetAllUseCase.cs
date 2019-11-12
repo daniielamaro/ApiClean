@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Application.UseCases.Topic.GetAll
+namespace ApiClean.UseCases.Topic.GetAll
 {
     public class TopicGetAllUseCase : ITopicGetAllUseCase
     {

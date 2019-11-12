@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Application.UseCases.Publication.Save.Handler
+namespace ApiClean.Application.UseCases.Publication.Save.Handler
 {
     class SaveHandler : Handler<PublicationSaveRequest>
     {

@@ -1,10 +1,12 @@
-﻿using Application.Boundaries.Comment;
+﻿using ApiClean.Application.Boundaries.Comment;
+using ApiClean.Application.UseCases.Comment.Save.Handlers;
+using Application.Boundaries.Comment;
 using Application.UseCases.Comment.Save.Handlers;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Application.UseCases.Comment.Save
+namespace ApiClean.Application.UseCases.Comment.Save
 {
     public class CommentSaveUseCase : ICommentSaveUseCase
     {

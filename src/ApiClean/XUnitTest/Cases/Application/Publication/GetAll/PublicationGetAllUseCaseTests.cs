@@ -5,10 +5,11 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using WebApi.UseCases.Publication;
 using WebApi.UseCases.User;
 using Xunit;
 
-namespace XUnitTest.Cases.Application.Publication.GetAll
+namespace ApiClean.Tests.XUnitTest.Cases.Application.Publication.GetAll
 {
     public class CommentGetAllUseCaseTests
     {

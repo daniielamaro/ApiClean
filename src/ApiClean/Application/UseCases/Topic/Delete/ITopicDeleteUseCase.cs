@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Application.UseCases.Topic.Delete
+namespace ApiClean.Application.UseCases.Topic.Delete
 {
      public interface ITopicDeleteUseCase
     {

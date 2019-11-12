@@ -1,10 +1,10 @@
-﻿using Domain.Validations;
+﻿using ApiClean.Domain.Validations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace Domain.Publication
+namespace ApiClean.Domain.Publication
 {
     public class Publication : Entity
     {

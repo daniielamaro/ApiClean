@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Application
+namespace ApiClean.Application
 {
     public class ApplicationException : Exception
     {

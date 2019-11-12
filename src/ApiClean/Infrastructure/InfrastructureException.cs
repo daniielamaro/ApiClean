@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Infrastructure
+namespace ApiClean.Infrastructure
 {
     public class InfrastructureException : Exception
     {

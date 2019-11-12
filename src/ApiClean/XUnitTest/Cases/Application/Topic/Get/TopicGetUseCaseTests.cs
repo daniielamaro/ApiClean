@@ -11,9 +11,9 @@ using WebApi.UseCases.Topic;
 using WebApi.UseCases.User;
 using Xunit;
 using Xunit.Frameworks.Autofac;
-using XUnitTest.Builders;
+using ApiClean.Tests.XUnitTest.Builders;
 
-namespace XUnitTest.Cases.Application.Topic.Get
+namespace ApiClean.Tests.XUnitTest.Cases.Application.Topic.Get
 {
     [UseAutofacTestFramework]
     [TestCaseOrderer("ApiClean.Tests.TestCaseOrdering.PriorityOrderer", "ApiClean.Tests")]

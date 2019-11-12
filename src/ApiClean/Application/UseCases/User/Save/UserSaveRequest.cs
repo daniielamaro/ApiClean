@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Application.UseCases.User.Save
+namespace ApiClean.Application.UseCases.User.Save
 {
     public class UserSaveRequest
     {

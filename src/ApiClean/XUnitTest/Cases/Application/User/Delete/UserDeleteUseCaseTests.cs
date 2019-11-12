@@ -7,9 +7,10 @@ using System;
 using WebApi.UseCases.User;
 using Xunit;
 using Xunit.Frameworks.Autofac;
-using XUnitTest.Builders;
+using ApiClean.Tests.XUnitTest.Builders;
+using ApiClean.Application.UseCases.User.Delete;
 
-namespace XUnitTest.Cases.Application.User.Delete
+namespace ApiClean.Tests.XUnitTest.Cases.Application.User.Delete
 {
     [UseAutofacTestFramework]
     [TestCaseOrderer("ApiClean.Tests.TestCaseOrdering.PriorityOrderer", "ApiClean.Tests")]

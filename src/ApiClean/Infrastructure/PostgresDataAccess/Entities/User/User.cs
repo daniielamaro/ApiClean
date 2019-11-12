@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Infrastructure.PostgresDataAccess.Entities.User
+namespace ApiClean.Infrastructure.PostgresDataAccess.Entities.User
 {
     public class User
     {

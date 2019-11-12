@@ -3,7 +3,7 @@ using Application.UseCases.Repository.Handler;
 using System.Text;
 using ApiClean.Application.Repositories;
 
-namespace Application.UseCases.Comment.Save.Handlers
+namespace ApiClean.Application.UseCases.Comment.Save.Handlers
 {
     public class SaveHandler : Handler<CommentSaveRequest>
     {

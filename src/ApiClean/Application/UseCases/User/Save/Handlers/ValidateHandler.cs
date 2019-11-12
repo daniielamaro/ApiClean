@@ -1,7 +1,7 @@
 ﻿using Application.UseCases.Repository.Handler;
 using System;
 
-namespace Application.UseCases.User.Save.Handlers
+namespace ApiClean.Application.UseCases.User.Save.Handlers
 {
     public class ValidateHandler : Handler<UserSaveRequest>
     {

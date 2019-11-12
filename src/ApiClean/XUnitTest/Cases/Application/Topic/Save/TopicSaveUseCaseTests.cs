@@ -7,7 +7,7 @@ using WebApi.UseCases.Topic;
 using Xunit;
 using Xunit.Frameworks.Autofac;
 
-namespace XUnitTest.Cases.Application.Topic.Save
+namespace ApiClean.Tests.XUnitTest.Cases.Application.Topic.Save
 {
     [UseAutofacTestFramework]
     [TestCaseOrderer("ApiClean.Tests.TestCaseOrdering.PriorityOrderer", "ApiClean.Tests")]

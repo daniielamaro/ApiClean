@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Infrastructure.PostgresDataAccess.Entities.Map.Topic
+namespace ApiClean.Infrastructure.PostgresDataAccess.Entities.Map.Topic
 {
     public class TopicMap : IEntityTypeConfiguration<Entities.Topic.Topic>
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using FluentValidation;
 
-namespace Domain.Validations
+namespace ApiClean.Domain.Validations
 {
     public class UserValidator : AbstractValidator<User.User>
     {

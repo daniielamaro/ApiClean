@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Application.UseCases.Comment.Save
+namespace ApiClean.Application.UseCases.Comment.Save
 {
     public interface ICommentSaveUseCase
     {

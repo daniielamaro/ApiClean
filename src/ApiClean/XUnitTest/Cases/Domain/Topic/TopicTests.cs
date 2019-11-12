@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
-using XUnitTest.Builders;
+using ApiClean.Tests.XUnitTest.Builders;
 
-namespace XUnitTest.Cases.Domain.Topic
+namespace ApiClean.Tests.XUnitTest.Cases.Domain.Topic
 {
     public class TopicTests
     {

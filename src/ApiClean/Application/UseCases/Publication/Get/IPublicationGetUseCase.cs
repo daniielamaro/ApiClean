@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Application.UseCases.Publication.Get
+namespace ApiClean.Application.UseCases.Publication.Get
 {
     public interface IPublicationGetUseCase
     {

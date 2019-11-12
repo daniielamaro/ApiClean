@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Application.UseCases.User.Get
+namespace ApiClean.Application.UseCases.User.Get
 {
     public class UserGetRequest
     {

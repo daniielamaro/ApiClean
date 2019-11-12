@@ -1,4 +1,4 @@
-﻿namespace Application.UseCases.User.Get
+﻿namespace ApiClean.Application.UseCases.User.Get
 {
     public interface IUserGet
     {

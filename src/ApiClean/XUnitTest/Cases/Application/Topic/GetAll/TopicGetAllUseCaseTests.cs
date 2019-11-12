@@ -8,7 +8,7 @@ using System.Text;
 using WebApi.UseCases.Topic;
 using Xunit;
 
-namespace XUnitTest.Cases.Application.Topic.GetAll
+namespace ApiClean.Tests.XUnitTest.Cases.Application.Topic.GetAll
 {
     public class PublicationGetAllUseCaseTests
     {

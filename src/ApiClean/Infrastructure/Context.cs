@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Infrastructure
+namespace ApiClean.Infrastructure
 {
     public class Context : DbContext
     {

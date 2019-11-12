@@ -7,7 +7,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using Domain.Topic;
 
-namespace Infrastructure.PostgresDataAccess.Repositories
+namespace ApiClean.Infrastructure.PostgresDataAccess.Repositories
 {
     public class TopicRepository : ITopicReadOnlyRepository, ITopicWriteOnlyRepository
     {

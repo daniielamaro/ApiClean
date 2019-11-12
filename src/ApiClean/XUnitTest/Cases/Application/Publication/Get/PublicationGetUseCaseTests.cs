@@ -8,12 +8,13 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using WebApi.UseCases.Publication;
 using WebApi.UseCases.User;
 using Xunit;
 using Xunit.Frameworks.Autofac;
-using XUnitTest.Builders;
+using ApiClean.Tests.XUnitTest.Builders;
 
-namespace XUnitTest.Cases.Application.Publication.Get
+namespace ApiClean.Tests.XUnitTest.Cases.Application.Publication.Get
 {
     [UseAutofacTestFramework]
     [TestCaseOrderer("ApiClean.Tests.TestCaseOrdering.PriorityOrderer", "ApiClean.Tests")]

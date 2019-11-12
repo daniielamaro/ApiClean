@@ -6,11 +6,12 @@ using DemoCleanArchitecture.Tests.TestCaseOrdering;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using WebApi.UseCases.Publication;
 using Xunit;
 using Xunit.Frameworks.Autofac;
-using XUnitTest.Builders;
+using ApiClean.Tests.XUnitTest.Builders;
 
-namespace XUnitTest.Cases.Application.Publication.Delete
+namespace ApiClean.Tests.XUnitTest.Cases.Application.Publication.Delete
 {
     [UseAutofacTestFramework]
     [TestCaseOrderer("ApiClean.Tests.TestCaseOrdering.PriorityOrderer", "ApiClean.Tests")]

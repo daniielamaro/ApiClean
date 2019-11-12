@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-namespace Infrastructure.PostgresDataAccess.AutoMapperProfile
+namespace ApiClean.Infrastructure.PostgresDataAccess.AutoMapperProfile
 {
     public class InfraDomainProfile : Profile
     {

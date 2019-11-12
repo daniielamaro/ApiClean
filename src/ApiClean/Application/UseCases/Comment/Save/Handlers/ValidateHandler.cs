@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Application.UseCases.Comment.Save.Handlers
+namespace ApiClean.Application.UseCases.Comment.Save.Handlers
 {
     public class ValidateHandler : Handler<CommentSaveRequest>
     {

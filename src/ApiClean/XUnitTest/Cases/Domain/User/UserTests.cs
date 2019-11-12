@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
-using XUnitTest.Builders;
+using ApiClean.Tests.XUnitTest.Builders;
 using FluentAssertions;
 
-namespace XUnitTest.Cases.Domain.User
+namespace ApiClean.Tests.XUnitTest.Cases.Domain.User
 {
     public class UserTests
     {

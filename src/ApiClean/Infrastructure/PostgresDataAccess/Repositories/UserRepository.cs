@@ -7,7 +7,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using Domain.User;
 
-namespace Infrastructure.PostgresDataAccess.Repositories
+namespace ApiClean.Infrastructure.PostgresDataAccess.Repositories
 {
     public class UserRepository : IUserReadOnlyRepository, IUserWriteOnlyRepository
     {
