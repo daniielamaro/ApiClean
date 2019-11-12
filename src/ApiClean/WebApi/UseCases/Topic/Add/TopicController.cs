@@ -9,10 +9,10 @@ namespace WebApi.UseCases.Topic.Add
     public class TopicController : ControllerBase
     {
 
-        private readonly TopicPresenter presenter;
+        private readonly PublicationPresenter presenter;
         private readonly ITopicSaveCase topicSaveUseCase;
 
-        public TopicController(TopicPresenter presenter, ITopicSaveCase customerSaveUseCase)
+        public TopicController(PublicationPresenter presenter, ITopicSaveCase customerSaveUseCase)
         {
             this.presenter = presenter;
             this.topicSaveUseCase = customerSaveUseCase;
