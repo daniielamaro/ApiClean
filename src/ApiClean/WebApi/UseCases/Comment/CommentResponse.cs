@@ -10,11 +10,14 @@ namespace WebApi.UseCases.Comment
         public Guid Id { get; private set; }
         public Domain.User.User User { get; private set; }
         public string Content { get; private set; }
-        public CommentResponse(Guid id, Domain.User.User user, string content)
+        public Guid PublicationId { get; private set; }
+
+        public CommentResponse(Guid id, Domain.User.User user, string content, Guid publicationId)
         {
             Id = id;
             User = user;
             Content = content;
+            PublicationId = publicationId;
         }
     }
 }

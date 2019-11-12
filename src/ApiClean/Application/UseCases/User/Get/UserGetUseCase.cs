@@ -4,12 +4,12 @@ using System;
 
 namespace Application.UseCases.User.Get
 {
-    public class UserGet
+    public class UserGetUseCase
     {
         private readonly IUserReadOnlyRepository userReadOnlyRepository;
         private readonly IOutputPortUser output;
 
-        public UserGet(IOutputPortUser output, IUserReadOnlyRepository userReadOnlyRepository)
+        public UserGetUseCase(IOutputPortUser output, IUserReadOnlyRepository userReadOnlyRepository)
         {
             this.output = output;
             this.userReadOnlyRepository = userReadOnlyRepository;

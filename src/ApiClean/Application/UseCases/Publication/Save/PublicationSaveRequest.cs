@@ -8,6 +8,7 @@ namespace Application.UseCases.Publication.Save
 {
     public class PublicationSaveRequest
     {
+        
         public Domain.Publication.Publication Publication { get; private set; }
 
 
@@ -21,5 +22,7 @@ namespace Application.UseCases.Publication.Save
         {
             Publication = new Domain.Publication.Publication(id, autor, title, content, dateCreated, comment, topic);
         }
+
+        
     }
 }

@@ -5,12 +5,12 @@ using System;
 
 namespace Application.UseCases.User.GetAll
 {
-    public class UserGetAll : IUserGetAll
+    public class UserGetAllUseCase : IUserGetAllUseCase
     {
         private readonly IUserReadOnlyRepository userReadOnlyRepository;
         private readonly IOutputPortUser output;
 
-        public UserGetAll(IUserReadOnlyRepository userReadOnlyRepository, IOutputPortUser output)
+        public UserGetAllUseCase(IUserReadOnlyRepository userReadOnlyRepository, IOutputPortUser output)
         {
             this.userReadOnlyRepository = userReadOnlyRepository;
             this.output = output;

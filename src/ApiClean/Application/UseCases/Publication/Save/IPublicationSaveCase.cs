@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Application.UseCases.Publication.Save
 {
-    public interface ITopicSaveCase
+    public interface IPublicationSaveCase
     {
         void Execute(PublicationSaveRequest request);
     }

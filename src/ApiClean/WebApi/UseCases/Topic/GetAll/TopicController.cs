@@ -20,7 +20,7 @@ namespace WebApi.UseCases.Topic.GetAll
 
         [HttpPost]
         [Route("GetAllTopic")]
-        [ProducesResponseType(typeof(List<TopicResponse>), 200)]
+        [ProducesResponseType(typeof(List<TopicPresenter>), 200)]
         [ProducesResponseType(typeof(ProblemDetails), 404)]
         public IActionResult GetAllTopics()
         {

@@ -28,12 +28,12 @@ namespace WebApi.UseCases.Comment
             => ViewModel = new OkObjectResult(id);
 
         public void Standard(Domain.Comment.Comment comment)
-            => ViewModel = new OkObjectResult(new CommentResponse(comment.Id, comment.Autor, comment.Content));
+            => ViewModel = new OkObjectResult(new CommentResponse(comment.Id, comment.Autor, comment.Content, comment.PublicationId));
 
         public void Standard(IList<Domain.Comment.Comment> comments)
         {
             var customersResponse = new List<CommentResponse>();
-            comments.ToList().ForEach(s => customersResponse.Add(new CommentResponse(s.Id, s.Autor, s.Content)));
+            comments.ToList().ForEach(s => customersResponse.Add(new CommentResponse(s.Id, s.Autor, s.Content, s.PublicationId)));
             ViewModel = new OkObjectResult(customersResponse);
         }
     }

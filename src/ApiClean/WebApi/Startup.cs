@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Autofac;
 using Autofac.Configuration;
 using Autofac.Extensions.DependencyInjection;
+using Infrastructure.Modules;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -16,9 +17,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using NSwag;
+using WebApi.Modules;
 using WebApi.Swagger;
 
-[assembly: ApiConventionType(typeof(ApiConventions))] 
+[assembly: ApiConventionType(typeof(ApiConventions))]
 
 namespace WebApi
 {
@@ -42,7 +44,7 @@ namespace WebApi
 
             services.AddSwaggerDocument(document =>
             {
-                document.Title = "DemoCleanArchitecture";
+                document.Title = "ApiCleanArchitecture";
                 document.Version = "v1";
                 document.PostProcess = s =>
                 {
@@ -63,10 +65,10 @@ namespace WebApi
             });
 
             var builder = new ContainerBuilder();
-            //builder.RegisterModule<ApplicationModule>();
-            //builder.RegisterModule<Infrastructure.PostgresDataAccess.Module>();
-            //builder.RegisterModule<InfrastructureDefaultModule>();
-            //builder.RegisterModule<WebApiModule>();
+            builder.RegisterModule<ApplicationModule>();
+            builder.RegisterModule<Infrastructure.PostgresDataAccess.Module>();
+            builder.RegisterModule<InfrastructureDefaultModule>();
+            builder.RegisterModule<WebApiModule>();
             builder.Populate(services);
 
             var container = builder.Build();
@@ -103,8 +105,7 @@ namespace WebApi
                 };
             });
 
-            app.UseSwaggerUi3(config => config.TransformToExternalPath = (route, request) => ExtractPath(request) + route);
-            //Redireciona swagger como pagina inicial
+            app.UseSwaggerUi3(config => config.TransformToExternalPath = (route, request) => ExtractPath(request) + route);            
             var option = new RewriteOptions();
             option.AddRedirect("^$", "swagger");
 

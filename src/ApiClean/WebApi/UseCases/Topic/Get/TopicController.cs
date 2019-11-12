@@ -29,4 +29,3 @@ namespace WebApi.UseCases.Topic.Get
         }
     }
 }
-}
