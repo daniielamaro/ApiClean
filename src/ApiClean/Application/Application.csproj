@@ -14,8 +14,8 @@
     <Folder Include="UseCases\Comment\GetAll\" />
     <Folder Include="UseCases\Comment\Save\" />
     <Folder Include="UseCases\Publication\Delete\" />
+    <Folder Include="UseCases\Publication\GetAll\" />
     <Folder Include="UseCases\Publication\Get\" />
-    <Folder Include="UseCases\Topic\Delete\" />
     <Folder Include="UseCases\Publication\Save\" />
     <Folder Include="UseCases\Topic\GetAll\" />
     <Folder Include="UseCases\Topic\Get\" />

@@ -44,7 +44,7 @@ namespace WebApi
 
             services.AddSwaggerDocument(document =>
             {
-                document.Title = "WebApi Alfa Bravo";
+                document.Title = "ApiCleanArchitecture";
                 document.Version = "v1";
                 document.PostProcess = s =>
                 {
