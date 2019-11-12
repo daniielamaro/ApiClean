@@ -8,10 +8,10 @@ namespace WebApi.UseCases.Topic.Delete
     [ApiController]
     public class TopicController : ControllerBase
     {
-        private readonly PublicationPresenter presenter;
+        private readonly TopicPresenter presenter;
         private readonly ITopicDeleteUseCase topicDeleteUseCase;
 
-        public TopicController(PublicationPresenter presenter, ITopicDeleteUseCase topicDeleteUseCase)
+        public TopicController(TopicPresenter presenter, ITopicDeleteUseCase topicDeleteUseCase)
         {
             this.presenter = presenter;
             this.topicDeleteUseCase = topicDeleteUseCase;

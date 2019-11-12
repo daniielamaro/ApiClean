@@ -8,10 +8,10 @@ namespace WebApi.UseCases.Topic.Get
     [ApiController]
     public class TopicController : ControllerBase
     {
-        private readonly PublicationPresenter presenter;
+        private readonly TopicPresenter presenter;
         private readonly ITopicGetUseCase topicGetUseCase;
 
-        public TopicController(PublicationPresenter presenter, ITopicGetUseCase topicGetUseCase)
+        public TopicController(TopicPresenter presenter, ITopicGetUseCase topicGetUseCase)
         {
             this.presenter = presenter;
             this.topicGetUseCase = topicGetUseCase;

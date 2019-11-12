@@ -26,7 +26,7 @@ namespace WebApi.UseCases.Comment.Update
         [ProducesResponseType(typeof(ProblemDetails), 400)]
         public IActionResult UpdateCustomer([FromBody] InputComment input)
         {
-            var request = new CommentSaveRequest(input.CommentId, input.Autor, input.Content, input.PublicationId);
+            var request = new CommentSaveRequest(input.Id, input.Autor, input.Content, input.PublicationId);
             commentSaveUseCase.Execute(request);
             return presenter.ViewModel;
         }

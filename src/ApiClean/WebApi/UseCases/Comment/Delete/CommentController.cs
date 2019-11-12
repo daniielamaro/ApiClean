@@ -26,7 +26,7 @@ namespace WebApi.UseCases.Comment.Delete
         [ProducesResponseType(typeof(ProblemDetails), 400)]
         public IActionResult DeleteCustomer([FromBody] InputComment input)
         {
-            var request = new CommentDeleteRequest(input.CommentId);
+            var request = new CommentDeleteRequest(input.Id);
             commentDeleteUseCase.Execute(request);
             return presenter.ViewModel;
         }

@@ -9,10 +9,10 @@ namespace WebApi.UseCases.Topic.GetAll
     [ApiController]
     public class TopicController : ControllerBase
     {
-        private readonly PublicationPresenter presenter;
+        private readonly TopicPresenter presenter;
         private readonly ITopicGetAllUseCase topicGetAllUseCase;
 
-        public TopicController(PublicationPresenter presenter, ITopicGetAllUseCase topicGetAllUseCase)
+        public TopicController(TopicPresenter presenter, ITopicGetAllUseCase topicGetAllUseCase)
         {
             this.presenter = presenter;
             this.topicGetAllUseCase = topicGetAllUseCase;
@@ -20,7 +20,7 @@ namespace WebApi.UseCases.Topic.GetAll
 
         [HttpPost]
         [Route("GetAllTopic")]
-        [ProducesResponseType(typeof(List<PublicationResponse>), 200)]
+        [ProducesResponseType(typeof(List<TopicPresenter>), 200)]
         [ProducesResponseType(typeof(ProblemDetails), 404)]
         public IActionResult GetAllTopics()
         {

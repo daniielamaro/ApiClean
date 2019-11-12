@@ -26,7 +26,7 @@ namespace WebApi.UseCases.Comment.Get
         [ProducesResponseType(typeof(ProblemDetails), 400)]
         public IActionResult GetCustomer([FromBody] InputComment input)
         {
-            var request = new CommentGetRequest(input.CommentId);
+            var request = new CommentGetRequest(input.Id);
             commentGetUseCase.Execute(request);
             return presenter.ViewModel;
         }

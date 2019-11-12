@@ -9,7 +9,7 @@ namespace WebApi.UseCases.Comment.Update
     public class InputComment
     {
         [Required]
-        public Guid CommentId { get; set; }
+        public Guid Id { get; set; }
         [Required]
         public Domain.User.User Autor { get; set; }
         [Required]
