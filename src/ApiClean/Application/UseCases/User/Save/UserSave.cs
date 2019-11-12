@@ -4,12 +4,12 @@ using System;
 
 namespace Application.UseCases.User.Save
 {
-    class UserSaveUseCase : IUserSaveUseCase
+    class UserSave : IUserSave
     {
         private readonly IOutputPortUser output;
         private readonly ValidateHandler validateHandler;
 
-        public UserSaveUseCase(IOutputPortUser output, ValidateHandler validateHandler, SaveHandler saveHandler)
+        public UserSave(IOutputPortUser output, ValidateHandler validateHandler, SaveHandler saveHandler)
         {
             this.output = output;
             this.validateHandler = validateHandler;

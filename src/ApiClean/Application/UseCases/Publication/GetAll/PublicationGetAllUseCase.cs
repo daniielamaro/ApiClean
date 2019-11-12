@@ -9,12 +9,12 @@ namespace Application.UseCases.Publication.GetAll
 {
     public class PublicationGetAllUseCase :  IPublicationGetAllUseCase
     {
-        private readonly IPublicationReadOnlyRepository pubReadOnlyRepository;
+        private readonly IPublicationReadOnlyRepository publicationReadOnlyRepository;
         private readonly IOutputPortPublication output;
 
-        public PublicationGetAllUseCase(IPublicationReadOnlyRepository pubReadOnlyRepository, IOutputPortPublication output)
+        public PublicationGetAllUseCase(IPublicationReadOnlyRepository publicationReadOnlyRepository, IOutputPortPublication output)
         {
-            this.pubReadOnlyRepository = pubReadOnlyRepository;
+            this.publicationReadOnlyRepository = publicationReadOnlyRepository;
             this.output = output;
         }
 
@@ -22,8 +22,8 @@ namespace Application.UseCases.Publication.GetAll
         {
             try
             {
-                var pubs = pubReadOnlyRepository.GetAll();
-                output.Standard(pubs);
+                var publications = publicationReadOnlyRepository.GetAll();
+                output.Standard(publications);
             }
             catch (System.Exception ex)
             {

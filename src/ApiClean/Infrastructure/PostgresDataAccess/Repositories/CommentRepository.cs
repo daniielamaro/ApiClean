@@ -55,7 +55,7 @@ namespace Infrastructure.PostgresDataAccess.Repositories
             using (var context = new Context())
             {
                 var model = context.Comments.FirstOrDefault(c => c.Id == comment.Id);
-                context.Topics.Remove(model);
+                context.Comments.Remove(model);
                 return context.SaveChanges();
             }
         }

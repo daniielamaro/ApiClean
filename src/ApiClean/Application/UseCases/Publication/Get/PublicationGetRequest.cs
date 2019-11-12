@@ -6,11 +6,11 @@ namespace Application.UseCases.Publication.Get
 {
     public class PublicationGetRequest
     {
-        public Guid PubId { get; private set; }
+        public Guid PublicationId { get; private set; }
 
-        public PublicationGetRequest(Guid pubId)
+        public PublicationGetRequest(Guid publicationId)
         {
-            PubId = pubId;
+            PublicationId = publicationId;
         }
     }
 }
