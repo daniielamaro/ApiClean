@@ -1,4 +1,5 @@
 ﻿using ApiClean.Application.Repositories;
+using Application.UseCases.Comment.Delete;
 using Application.UseCases.Publication.Delete;
 using Application.UseCases.Topic.Delete;
 using Application.UseCases.User.Delete;
@@ -6,35 +7,36 @@ using DemoCleanArchitecture.Tests.TestCaseOrdering;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using WebApi.UseCases.Comment;
 using Xunit;
 using Xunit.Frameworks.Autofac;
 using XUnitTest.Builders;
 
-namespace XUnitTest.Cases.Application.Publication.Delete
+namespace XUnitTest.Cases.Application.Comment.Delete
 {
     [UseAutofacTestFramework]
     [TestCaseOrderer("ApiClean.Tests.TestCaseOrdering.PriorityOrderer", "ApiClean.Tests")]
     public class CommentDeleteUseCaseTests
     {
-        private readonly IPublicationDeleteUseCase publicationDeleteUseCase;
-        private readonly PublicationPresenter presenter;
-        private readonly IPublicationWriteOnlyRepository publicationWriteOnlyRepository;
-        private static Guid publicationId;
+        private readonly ICommentDeleteUseCase commentDeleteUseCase;
+        private readonly CommentPresenter presenter;
+        private readonly ICommentWriteOnlyRepository commentWriteOnlyRepository;
+        private static Guid CommentId;
 
-        public CommentDeleteUseCaseTests(IPublicationDeleteUseCase publicationDeleteUseCase, PublicationPresenter presenter, IPublicationWriteOnlyRepository publicationWriteOnlyRepository)
+        public CommentDeleteUseCaseTests(ICommentDeleteUseCase commentDeleteUseCase, CommentPresenter presenter, ICommentWriteOnlyRepository commentWriteOnlyRepository)
         {
-            this.publicationDeleteUseCase = publicationDeleteUseCase;
+            this.commentDeleteUseCase = commentDeleteUseCase;
             this.presenter = presenter;
-            this.publicationWriteOnlyRepository = publicationWriteOnlyRepository;
+            this.commentWriteOnlyRepository = commentWriteOnlyRepository;
         }
 
         [Fact]
         [TestPriority(1)]
         public void ShouldAddSomeCustomer()
         {
-            var model = PublicationBuilder.New().Build();
-            publicationId = model.Id;
-            var ret = publicationWriteOnlyRepository.Add(model);
+            var model = CommentBuilder.New().Build();
+            CommentId = model.Id;
+            var ret = commentWriteOnlyRepository.Add(model);
             ret.Should().Be(1);
         }
 
@@ -42,8 +44,8 @@ namespace XUnitTest.Cases.Application.Publication.Delete
         [TestPriority(2)]
         public void ShouldDeleteCustomer()
         {
-            var request = new PublicationDeleteRequest(publicationId);
-            publicationDeleteUseCase.Execute(request);
+            var request = new CommentDeleteRequest(CommentId);
+            commentDeleteUseCase.Execute(request);
             presenter.ViewModel.Should().BeOfType<OkObjectResult>();
         }
 
@@ -51,8 +53,8 @@ namespace XUnitTest.Cases.Application.Publication.Delete
         [TestPriority(2)]
         public void ShouldDeleteCustomerAndReturnError()
         {
-            var request = new PublicationDeleteRequest(Guid.NewGuid());
-            publicationDeleteUseCase.Execute(request);
+            var request = new CommentDeleteRequest(Guid.NewGuid());
+            commentDeleteUseCase.Execute(request);
             presenter.ViewModel.Should().BeOfType<BadRequestObjectResult>();
         }
     }

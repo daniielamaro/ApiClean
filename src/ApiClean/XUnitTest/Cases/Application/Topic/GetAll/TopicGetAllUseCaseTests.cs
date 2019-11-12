@@ -1,4 +1,5 @@
-﻿using Application.UseCases.User.GetAll;
+﻿using Application.UseCases.Topic.GetAll;
+using Application.UseCases.User.GetAll;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using System;

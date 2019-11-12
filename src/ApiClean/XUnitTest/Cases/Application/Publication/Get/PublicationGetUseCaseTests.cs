@@ -19,47 +19,45 @@ namespace XUnitTest.Cases.Application.Publication.Get
     [TestCaseOrderer("ApiClean.Tests.TestCaseOrdering.PriorityOrderer", "ApiClean.Tests")]
     public class PublicationGetUseCaseTests
     {
-        public class CustomerGetUseCaseTests
+        private readonly IPublicationGetUseCase publicationGetUseCase;
+        private readonly PublicationPresenter presenter;
+        private readonly IPublicationWriteOnlyRepository publicationWriteOnlyRepository;
+        private static Guid PublicationId;
+
+        public PublicationGetUseCaseTests(IPublicationGetUseCase publicationGetUseCase, PublicationPresenter presenter, IPublicationWriteOnlyRepository publicationWriteOnlyRepository)
         {
-            private readonly IPublicationGetUseCase publicationGetUseCase;
-            private readonly PublicationPresenter presenter;
-            private readonly IPublicationWriteOnlyRepository publicationWriteOnlyRepository;
-            private static Guid PublicationId;
+            this.publicationGetUseCase = publicationGetUseCase;
+            this.presenter = presenter;
+            this.publicationWriteOnlyRepository = publicationWriteOnlyRepository;
+        }
 
-            public CustomerGetUseCaseTests(IPublicationGetUseCase publicationGetUseCase, PublicationPresenter presenter, IPublicationWriteOnlyRepository publicationWriteOnlyRepository)
-            {
-                this.publicationGetUseCase = publicationGetUseCase;
-                this.presenter = presenter;
-                this.publicationWriteOnlyRepository = publicationWriteOnlyRepository;
-            }
+        [Fact]
+        [TestPriority(1)]
+        public void ShouldAddSomeCustomer()
+        {
+            var model = PublicationBuilder.New().Build();
+            PublicationId = model.Id;
+            var ret = publicationWriteOnlyRepository.Add(model);
+            ret.Should().Be(1);
+        }
 
-            [Fact]
-            [TestPriority(1)]
-            public void ShouldAddSomeCustomer()
-            {
-                var model = PublicationBuilder.New().Build();
-                PublicationId = model.Id;
-                var ret = publicationWriteOnlyRepository.Add(model);
-                ret.Should().Be(1);
-            }
+        [Fact]
+        [TestPriority(2)]
+        public void ShouldGetCustomerById()
+        {
+            var request = new PublicationGetRequest(PublicationId);
+            publicationGetUseCase.Execute(request);
+            presenter.ViewModel.Should().BeOfType<OkObjectResult>();
+        }
 
-            [Fact]
-            [TestPriority(2)]
-            public void ShouldGetCustomerById()
-            {
-                var request = new PublicationGetRequest(PublicationId);
-                publicationGetUseCase.Execute(request);
-                presenter.ViewModel.Should().BeOfType<OkObjectResult>();
-            }
-
-            [Fact]
-            [TestPriority(2)]
-            public void ShouldNotGetCustomerByIdAndReturnNotFound()
-            {
-                var request = new PublicationGetRequest(Guid.NewGuid());
-                publicationGetUseCase.Execute(request);
-                presenter.ViewModel.Should().BeOfType<NotFoundObjectResult>();
-            }
+        [Fact]
+        [TestPriority(2)]
+        public void ShouldNotGetCustomerByIdAndReturnNotFound()
+        {
+            var request = new PublicationGetRequest(Guid.NewGuid());
+            publicationGetUseCase.Execute(request);
+            presenter.ViewModel.Should().BeOfType<NotFoundObjectResult>();
         }
     }
 }
+

@@ -10,12 +10,12 @@ using Xunit;
 
 namespace XUnitTest.Cases.Application.Publication.GetAll
 {
-    public class PublicationGetAllUseCaseTests
+    public class CommentGetAllUseCaseTests
     {
         private readonly IPublicationGetAllUseCase publicationGetAllUseCase;
         private readonly PublicationPresenter presenter;
 
-        public PublicationGetAllUseCaseTests(IPublicationGetAllUseCase publicationGetAllUseCase, PublicationPresenter presenter)
+        public CommentGetAllUseCaseTests(IPublicationGetAllUseCase publicationGetAllUseCase, PublicationPresenter presenter)
         {
             this.publicationGetAllUseCase = publicationGetAllUseCase;
             this.presenter = presenter;

@@ -19,7 +19,7 @@ namespace XUnitTest.Cases.Application.Topic.Delete
         private readonly ITopicDeleteUseCase topicDeleteUseCase;
         private readonly TopicPresenter presenter;
         private readonly ITopicWriteOnlyRepository topicWriteOnlyRepository;
-        private static Guid UserId;
+        private static Guid TopicId;
 
         public PublicationDeleteUseCaseTests(ITopicDeleteUseCase topicDeleteUseCase, TopicPresenter presenter, ITopicWriteOnlyRepository topicWriteOnlyRepository)
         {
@@ -33,7 +33,7 @@ namespace XUnitTest.Cases.Application.Topic.Delete
         public void ShouldAddSomeCustomer()
         {
             var model = TopicBuilder.New().Build();
-            UserId = model.Id;
+            TopicId = model.Id;
             var ret = topicWriteOnlyRepository.Add(model);
             ret.Should().Be(1);
         }
@@ -42,7 +42,7 @@ namespace XUnitTest.Cases.Application.Topic.Delete
         [TestPriority(2)]
         public void ShouldDeleteCustomer()
         {
-            var request = new UserDeleteRequest(UserId);
+            var request = new UserDeleteRequest(TopicId);
             topicDeleteUseCase.Execute(request);
             presenter.ViewModel.Should().BeOfType<OkObjectResult>();
         }
