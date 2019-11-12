@@ -1,6 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using Domain.Comment;
 
 namespace WebApi.UseCases.Publication.Update
 {
@@ -17,7 +17,7 @@ namespace WebApi.UseCases.Publication.Update
         [Required]
         public DateTime DateCreated { get; private set; }
         [Required]
-        public List<Comment> Comments { get; private set; }
+        public List<Domain.Comment.Comment> Comments { get; private set; }
         [Required]
         public Domain.Topic.Topic Topic { get; private set; }
     }

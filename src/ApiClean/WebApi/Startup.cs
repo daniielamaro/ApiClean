@@ -20,7 +20,7 @@ using NSwag;
 using WebApi.Modules;
 using WebApi.Swagger;
 
-[assembly: ApiConventionType(typeof(ApiConventions))] 
+[assembly: ApiConventionType(typeof(ApiConventions))]
 
 namespace WebApi
 {

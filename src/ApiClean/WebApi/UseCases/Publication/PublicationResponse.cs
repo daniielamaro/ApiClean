@@ -12,10 +12,10 @@ namespace WebApi.UseCases.Publication
         public string Title { get; private set; }
         public string Content { get; private set; }
         public DateTime DateCreated { get; private set; }
-        public List<Comment> Comments { get; private set; }
+        public List<Domain.Comment.Comment> Comments { get; private set; }
         public Domain.Topic.Topic Topic { get; private set; }
 
-        public PublicationResponse(Guid id, Domain.User.User autor, string title, string content, DateTime dateCreated, List<Comment> comments, Domain.Topic.Topic topic)
+        public PublicationResponse(Guid id, Domain.User.User autor, string title, string content, DateTime dateCreated, List<Domain.Comment.Comment> comments, Domain.Topic.Topic topic)
         {
             Id = id;
             Autor = autor;
