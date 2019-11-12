@@ -10,25 +10,25 @@ namespace Application.UseCases.Publication.Get
     public class PublicationGetUseCase
     {
         private readonly IOutputPortPublication output;
-        private readonly IPublicationReadOnlyRepository pubReadOnlyRepository;
+        private readonly IPublicationReadOnlyRepository publicationReadOnlyRepository;
 
-        public PublicationGetUseCase(IOutputPortPublication output, IPublicationReadOnlyRepository pubReadOnlyRepository)
+        public PublicationGetUseCase(IOutputPortPublication output, IPublicationReadOnlyRepository publicationReadOnlyRepository)
         {
             this.output = output;
-            this.pubReadOnlyRepository = pubReadOnlyRepository;
+            this.publicationReadOnlyRepository = publicationReadOnlyRepository;
         }
 
         public void Execute(PublicationGetRequest request)
         {
             try
             {
-                var pub = pubReadOnlyRepository.GetById(request.PubId);
-                if (pub == null)
+                var publication = publicationReadOnlyRepository.GetById(request.PublicationId);
+                if (publication == null)
                 {
-                    output.NotFound($"Not found customer with id: {request.PubId}");
+                    output.NotFound($"Not found customer with id: {request.PublicationId}");
                     return;
                 }
-                output.Standard(pub);
+                output.Standard(publication);
             }
             catch (Exception ex)
             {

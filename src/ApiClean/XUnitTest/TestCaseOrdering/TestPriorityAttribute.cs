@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Tests.TestCaseOrdering
+namespace DemoCleanArchitecture.Tests.TestCaseOrdering
 {
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
     public class TestPriorityAttribute : Attribute

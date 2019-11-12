@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Application.UseCases.User.Save
 {
-    public interface IUserSaveUseCase
+    public interface IUserSave
     {
         void Execute(UserSaveRequest request);
     }

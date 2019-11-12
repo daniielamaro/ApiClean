@@ -1,6 +1,6 @@
 ﻿namespace Application.UseCases.User.GetAll
 {
-    public interface IUserGetAllUseCase
+    public interface IUserGetAll
     {
         void Execute();
     }

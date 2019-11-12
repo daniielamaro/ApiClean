@@ -4,7 +4,7 @@ using System.Linq;
 using Xunit.Abstractions;
 using Xunit.Sdk;
 
-namespace Tests.TestCaseOrdering
+namespace DemoCleanArchitecture.Tests.TestCaseOrdering
 {
     public class PriorityOrderer : ITestCaseOrderer
     {

@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infrastructure.PostgresDataAccess.Entities.Map.User
 {
-    public class UserMap : IEntityTypeConfiguration<Entities.Topic.User>
+    public class UserMap : IEntityTypeConfiguration<Entities.User.User>
     {
-        public void Configure(EntityTypeBuilder<Entities.Topic.User> builder)
+        public void Configure(EntityTypeBuilder<Entities.User.User> builder)
         {
             builder.ToTable("User", "ApiClean");
             builder.HasKey(u => u.Id);

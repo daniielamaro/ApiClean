@@ -56,13 +56,6 @@
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="UseCases\User\Get\" />
-    <Folder Include="UseCases\User\GetAll\" />
-    <Folder Include="UseCases\User\Update\" />
-	<Folder Include="UseCases\" />
-  </ItemGroup>
-
 
 
 </Project>
