@@ -1,7 +1,7 @@
-﻿using Domain.Comment;
-using Domain.Publication;
-using Domain.Topic;
-using Domain.User;
+﻿using ApiClean.Domain.Comment;
+using ApiClean.Domain.Publication;
+using ApiClean.Domain.Topic;
+using ApiClean.Domain.User;
 using System;
 using System.Collections.Generic;
 using System.Text;

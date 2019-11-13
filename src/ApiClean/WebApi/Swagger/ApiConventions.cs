@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 
-namespace WebApi.Swagger
+namespace ApiClean.WebApi.Swagger
 {
     public static class ApiConventions
     {

@@ -1,7 +1,7 @@
 ﻿using Autofac;
 using WebApi.UseCases.Topic;
 
-namespace WebApi.Modules
+namespace ApiClean.WebApi.Modules
 {
     public class WebApiModule : Module
     {

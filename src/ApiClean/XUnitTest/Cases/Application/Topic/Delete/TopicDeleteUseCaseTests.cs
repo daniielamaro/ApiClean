@@ -1,7 +1,4 @@
 ﻿using ApiClean.Application.Repositories;
-using Application.UseCases.Topic.Delete;
-using Application.UseCases.User.Delete;
-using DemoCleanArchitecture.Tests.TestCaseOrdering;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -10,6 +7,8 @@ using Xunit;
 using Xunit.Frameworks.Autofac;
 using ApiClean.Tests.XUnitTest.Builders;
 using ApiClean.Application.UseCases.User.Delete;
+using ApiClean.Application.UseCases.Topic.Delete;
+using ApiClean.Tests.TestCaseOrdering;
 
 namespace ApiClean.Tests.XUnitTest.Cases.Application.Topic.Delete
 {
@@ -41,9 +40,9 @@ namespace ApiClean.Tests.XUnitTest.Cases.Application.Topic.Delete
 
         [Fact]
         [TestPriority(2)]
-        public void ShouldDeleteCustomer()
+        public void ShouldDeleteTopic()
         {
-            var request = new UserDeleteRequest(TopicId);
+            var request = new TopicDeleteRequest(TopicId);
             topicDeleteUseCase.Execute(request);
             presenter.ViewModel.Should().BeOfType<OkObjectResult>();
         }
@@ -52,7 +51,7 @@ namespace ApiClean.Tests.XUnitTest.Cases.Application.Topic.Delete
         [TestPriority(2)]
         public void ShouldDeleteCustomerAndReturnError()
         {
-            var request = new UserDeleteRequest(Guid.NewGuid());
+            var request = new TopicDeleteRequest(Guid.NewGuid());
             topicDeleteUseCase.Execute(request);
             presenter.ViewModel.Should().BeOfType<BadRequestObjectResult>();
         }

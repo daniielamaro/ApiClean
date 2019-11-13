@@ -1,14 +1,12 @@
-﻿using Application.UseCases.Publication.Save;
-using Application.UseCases.Topic.Save;
-using Domain.Comment;
-using DemoCleanArchitecture.Tests.TestCaseOrdering;
-using FluentAssertions;
+﻿using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using WebApi.UseCases.Publication;
 using Xunit;
 using Xunit.Frameworks.Autofac;
+using ApiClean.Application.UseCases.Publication.Save;
+using ApiClean.Tests.TestCaseOrdering;
 
 namespace ApiClean.Tests.XUnitTest.Cases.Application.Publication.Save
 {
@@ -36,7 +34,7 @@ namespace ApiClean.Tests.XUnitTest.Cases.Application.Publication.Save
         [TestPriority(1)]
         public void ShouldAddNewPublicationAndReturnOK()
         { 
-            var request = new PublicationSaveRequest(Builders.UserBuilder.New().Build(), "Title", "Content", DateTime.Now, new List<Domain.Comment.Comment>(), Builders.TopicBuilder.New().Build());
+            var request = new PublicationSaveRequest(Builders.UserBuilder.New().Build(), "Title", "Content", DateTime.Now, new List<ApiClean.Domain.Comment.Comment>(), Builders.TopicBuilder.New().Build());
             PublicationId = request.Publication.Id;
             publicationSaveUseCase.Execute(request);
             presenter.ViewModel.Should().BeOfType<OkObjectResult>();
@@ -46,7 +44,7 @@ namespace ApiClean.Tests.XUnitTest.Cases.Application.Publication.Save
         [TestPriority(2)]
         public void ShouldUpdatePublicationAAndReturnOK()
         {
-            var request = new PublicationSaveRequest("TopicTestUpdate");
+            var request = new PublicationSaveRequest(Builders.UserBuilder.New().Build(), "Title", "ContentUpdate", DateTime.Now, new List<ApiClean.Domain.Comment.Comment>(), Builders.TopicBuilder.New().Build());
             publicationSaveUseCase.Execute(request);
             presenter.ViewModel.Should().BeOfType<OkObjectResult>();
         }
@@ -54,7 +52,7 @@ namespace ApiClean.Tests.XUnitTest.Cases.Application.Publication.Save
         [Fact]
         public void ShouldNotAddNewCustomerAndReturnError()
         {
-            var request = new PublicationSaveRequest("");
+            var request = new PublicationSaveRequest(Builders.UserBuilder.New().Build(), "", "", DateTime.Now, new List<ApiClean.Domain.Comment.Comment>(), Builders.TopicBuilder.New().Build());
             publicationSaveUseCase.Execute(request);
             presenter.ViewModel.Should().BeOfType<BadRequestObjectResult>();
         }
@@ -62,7 +60,7 @@ namespace ApiClean.Tests.XUnitTest.Cases.Application.Publication.Save
         [Fact]
         public void ShouldNotUpdateCustomerAndReturnError()
         {
-            var request = new PublicationSaveRequest(PublicationId, "");
+            var request = new PublicationSaveRequest(PublicationId, Builders.UserBuilder.New().Build(), "Title", "Content", DateTime.Now, new List<ApiClean.Domain.Comment.Comment>(), Builders.TopicBuilder.New().Build());
             publicationSaveUseCase.Execute(request);
             presenter.ViewModel.Should().BeOfType<BadRequestObjectResult>();
         }

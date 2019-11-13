@@ -1,17 +1,16 @@
 ﻿using ApiClean.Application.Repositories;
-using Application.UseCases.Topic.Get;
-using Application.UseCases.User.Get;
-using DemoCleanArchitecture.Tests.TestCaseOrdering;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using WebApi.UseCases.Topic;
-using WebApi.UseCases.User;
 using Xunit;
 using Xunit.Frameworks.Autofac;
 using ApiClean.Tests.XUnitTest.Builders;
+using ApiClean.Application.UseCases.Topic.Get;
+using ApiClean.WebApi.UseCases.User;
+using ApiClean.Tests.TestCaseOrdering;
 
 namespace ApiClean.Tests.XUnitTest.Cases.Application.Topic.Get
 {
@@ -26,7 +25,7 @@ namespace ApiClean.Tests.XUnitTest.Cases.Application.Topic.Get
             private readonly ITopicWriteOnlyRepository topicWriteOnlyRepository;
             private static Guid UserId;
 
-            public CustomerGetUseCaseTests(ITopicGetUseCase topicGetUseCase, UserPresenter presenter, ITopicWriteOnlyRepository topicWriteOnlyRepository)
+            public CustomerGetUseCaseTests(ITopicGetUseCase topicGetUseCase, TopicPresenter presenter, ITopicWriteOnlyRepository topicWriteOnlyRepository)
             {
                 this.topicGetUseCase = topicGetUseCase;
                 this.presenter = presenter;

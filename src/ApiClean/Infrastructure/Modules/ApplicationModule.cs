@@ -6,7 +6,7 @@ namespace Infrastructure.Modules
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterAssemblyTypes(typeof(Application.ApplicationException).Assembly)
+            builder.RegisterAssemblyTypes(typeof(ApiClean.Application.ApplicationException).Assembly)
                 .AsImplementedInterfaces()
                 .AsSelf().InstancePerLifetimeScope();
         }

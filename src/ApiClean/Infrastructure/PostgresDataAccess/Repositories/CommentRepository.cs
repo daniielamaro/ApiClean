@@ -4,8 +4,8 @@ using ApiClean.Application.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Linq.Expressions;
-using Domain.Comment;
 using System;
+using ApiClean.Domain.Comment;
 
 namespace ApiClean.Infrastructure.PostgresDataAccess.Repositories
 {
@@ -20,7 +20,7 @@ namespace ApiClean.Infrastructure.PostgresDataAccess.Repositories
 
         public int Add(Comment comment)
         {
-            var model = mapper.Map<Entities.Comment.Comment>(comment);
+            var model = mapper.Map<Comment>(comment);
             using (Context context = new Context())
             {
                 context.Comments.Add(model);
@@ -31,7 +31,7 @@ namespace ApiClean.Infrastructure.PostgresDataAccess.Repositories
 
         public int Add(List<Comment> comments)
         {
-            var models = mapper.Map<List<Entities.Comment.Comment>>(comments);
+            var models = mapper.Map<List<Comment>>(comments);
             using (Context context = new Context())
             {
                 context.Comments.AddRange(models);
@@ -74,7 +74,7 @@ namespace ApiClean.Infrastructure.PostgresDataAccess.Repositories
         {
             using (var context = new Context())
             {
-                return mapper.Map<List<Comment>>(context.Comments.Where(mapper.Map<Expression<Func<Entities.Comment.Comment, bool>>>(filter)).ToList());
+                return mapper.Map<List<Comment>>(context.Comments.Where(mapper.Map<Expression<Func<Comment, bool>>>(filter)).ToList());
             }
         }
 
@@ -98,7 +98,7 @@ namespace ApiClean.Infrastructure.PostgresDataAccess.Repositories
         {
             using (var context = new Context())
             {
-                context.Entry(mapper.Map<Entities.Comment.Comment>(comment)).State = EntityState.Modified;
+                context.Entry(mapper.Map<Comment>(comment)).State = EntityState.Modified;
                 return context.SaveChanges();
             }
         }

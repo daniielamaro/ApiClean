@@ -5,7 +5,7 @@ using ApiClean.Application.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Linq.Expressions;
-using Domain.Topic;
+using ApiClean.Domain.Topic;
 
 namespace ApiClean.Infrastructure.PostgresDataAccess.Repositories
 {
@@ -20,7 +20,7 @@ namespace ApiClean.Infrastructure.PostgresDataAccess.Repositories
 
         public int Add(Topic topic)
         {
-            var model = mapper.Map<Entities.Topic.Topic>(topic);
+            var model = mapper.Map<Topic>(topic);
             using (Context context = new Context())
             {
                 context.Topics.Add(model);
@@ -31,7 +31,7 @@ namespace ApiClean.Infrastructure.PostgresDataAccess.Repositories
 
         public int Add(List<Topic> topics)
         {
-            var models = mapper.Map<List<Entities.Topic.Topic>>(topics);
+            var models = mapper.Map<List<Topic>>(topics);
             using (Context context = new Context())
             {
                 context.Topics.AddRange(models);
@@ -76,7 +76,7 @@ namespace ApiClean.Infrastructure.PostgresDataAccess.Repositories
         {
             using (var context = new Context())
             {
-                return mapper.Map<List<Topic>>(context.Topics.Where(mapper.Map<Expression<Func<Entities.Topic.Topic, bool>>>(filter)).ToList());
+                return mapper.Map<List<Topic>>(context.Topics.Where(mapper.Map<Expression<Func<Topic, bool>>>(filter)).ToList());
             }
         }
 

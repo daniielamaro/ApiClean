@@ -1,5 +1,5 @@
 ﻿using System;
-using Application.UseCases.Publication.Save;
+using ApiClean.Application.UseCases.Publication.Save;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.UseCases.Publication.Add

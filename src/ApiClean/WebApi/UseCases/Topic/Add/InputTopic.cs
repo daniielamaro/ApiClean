@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace WebApi.UseCases.Topic.Add
+namespace ApiClean.WebApi.UseCases.Topic.Add
 {
     public class InputTopic
     {

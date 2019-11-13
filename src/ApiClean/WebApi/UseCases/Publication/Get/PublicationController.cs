@@ -1,4 +1,4 @@
-﻿using Application.UseCases.Publication.Get;
+﻿using ApiClean.Application.UseCases.Publication.Get;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.UseCases.Publication.Get

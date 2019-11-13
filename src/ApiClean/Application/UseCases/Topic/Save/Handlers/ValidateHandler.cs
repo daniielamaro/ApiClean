@@ -1,7 +1,7 @@
 ﻿using ApiClean.Application.UseCases.Repository.Handler;
 using System;
 
-namespace ApiClean.Application.UseCases.Topic.Save.Handler
+namespace ApiClean.Application.UseCases.Topic.Save.Handler.Handlers
 {
     public class ValidateHandler : Handler<TopicSaveRequest>
     {

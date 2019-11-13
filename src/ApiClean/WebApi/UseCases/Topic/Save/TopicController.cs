@@ -1,5 +1,5 @@
 ﻿using System;
-using Application.UseCases.Topic.Save;
+using ApiClean.Application.UseCases.Topic.Save;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.UseCases.Topic.Save

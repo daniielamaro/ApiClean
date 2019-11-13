@@ -1,14 +1,13 @@
 ﻿using ApiClean.Application.Repositories;
-using Application.UseCases.User.Delete;
-using DemoCleanArchitecture.Tests.TestCaseOrdering;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using WebApi.UseCases.User;
+using ApiClean.WebApi.UseCases.User;
 using Xunit;
 using Xunit.Frameworks.Autofac;
 using ApiClean.Tests.XUnitTest.Builders;
 using ApiClean.Application.UseCases.User.Delete;
+using ApiClean.Tests.TestCaseOrdering;
 
 namespace ApiClean.Tests.XUnitTest.Cases.Application.User.Delete
 {

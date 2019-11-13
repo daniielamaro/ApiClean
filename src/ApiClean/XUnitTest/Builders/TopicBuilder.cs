@@ -1,4 +1,4 @@
-﻿using Domain.Topic;
+﻿using ApiClean.Domain.Topic;
 using System;
 using System.Collections.Generic;
 using System.Text;

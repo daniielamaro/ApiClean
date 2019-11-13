@@ -1,11 +1,11 @@
-﻿using Application.Boundaries.User;
+﻿using ApiClean.Application.Boundaries.User;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 
-namespace WebApi.UseCases.User
+namespace ApiClean.WebApi.UseCases.User
 {
     public class UserPresenter : IOutputPortUser
     {
@@ -28,10 +28,10 @@ namespace WebApi.UseCases.User
         public void Standard(Guid id)
            => ViewModel = new OkObjectResult(id);
          
-        public void Standard(Domain.User.User user)
+        public void Standard(ApiClean.Domain.User.User user)
             => ViewModel = new OkObjectResult(new UserResponse(user.Id, user.Name, user.Email, user.Password));
 
-        public void Standard(IList<Domain.User.User> user)
+        public void Standard(IList<ApiClean.Domain.User.User> user)
         {
             var usersResponse = new List<UserResponse>();
             user.ToList().ForEach(s => usersResponse.Add(new UserResponse(s.Id, s.Name, s.Email, s.Password)));

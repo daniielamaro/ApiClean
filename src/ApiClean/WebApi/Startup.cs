@@ -17,12 +17,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using NSwag;
-using WebApi.Modules;
-using WebApi.Swagger;
+using ApiClean.WebApi.Modules;
+using ApiClean.WebApi.Swagger;
 
 [assembly: ApiConventionType(typeof(ApiConventions))] 
 
-namespace WebApi
+namespace ApiClean.WebApi
 {
     public class Startup
     {

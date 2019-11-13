@@ -1,9 +1,5 @@
 ﻿using ApiClean.Application.Repositories;
-using Application.UseCases.Comment.Delete;
-using Application.UseCases.Publication.Delete;
-using Application.UseCases.Topic.Delete;
-using Application.UseCases.User.Delete;
-using DemoCleanArchitecture.Tests.TestCaseOrdering;
+using ApiClean.Application.UseCases.Comment.Delete;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -11,6 +7,7 @@ using WebApi.UseCases.Comment;
 using Xunit;
 using Xunit.Frameworks.Autofac;
 using ApiClean.Tests.XUnitTest.Builders;
+using ApiClean.Tests.TestCaseOrdering;
 
 namespace ApiClean.Tests.XUnitTest.Cases.Application.Comment.Delete
 {

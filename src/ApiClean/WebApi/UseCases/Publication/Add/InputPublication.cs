@@ -1,5 +1,4 @@
-﻿using Domain.Comment;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 
@@ -13,7 +12,7 @@ namespace WebApi.UseCases.Publication.Add
         [Required]
         public Guid Id { get; private set; }
         [Required]
-        public Domain.User.User Autor { get; private set; }
+        public ApiClean.Domain.User.User Autor { get; private set; }
         [Required]
         public string Title { get; private set; }
         [Required]
@@ -21,8 +20,8 @@ namespace WebApi.UseCases.Publication.Add
         [Required]
         public DateTime DateCreated { get; private set; }
         [Required]
-        public List<Domain.Comment.Comment> Comments { get; private set; }
+        public List<ApiClean.Domain.Comment.Comment> Comments { get; private set; }
         [Required]
-        public Domain.Topic.Topic Topic { get; private set; }
+        public ApiClean.Domain.Topic.Topic Topic { get; private set; }
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ApiClean.Application.UseCases.Publication.Save.Handler
 {
-    class ValidateHandler : Handler<PublicationSaveRequest>
+    public class ValidateHandler : Handler<PublicationSaveRequest>
     {
         public override void ProcessRequest(PublicationSaveRequest request)
         {

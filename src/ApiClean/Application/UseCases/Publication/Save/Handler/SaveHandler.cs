@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ApiClean.Application.UseCases.Publication.Save.Handler
 {
-    class SaveHandler : Handler<PublicationSaveRequest>
+    public class SaveHandler : Handler<PublicationSaveRequest>
     {
         private readonly IPublicationWriteOnlyRepository pubReadOnlyRepository;
 

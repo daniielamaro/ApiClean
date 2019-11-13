@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Application.UseCases.Topic.GetAll;
+using ApiClean.Application.UseCases.Topic.GetAll;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.UseCases.Topic.GetAll

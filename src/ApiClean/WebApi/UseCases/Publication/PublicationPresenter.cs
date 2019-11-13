@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Application.Boundaries.Publication;
+using ApiClean.Application.Boundaries.Publication;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.UseCases.Publication
@@ -27,14 +27,14 @@ namespace WebApi.UseCases.Publication
         public void Standard(Guid id)
             => ViewModel = new OkObjectResult(id);
 
-        public void Standard(Domain.Publication.Publication model)
+        public void Standard(ApiClean.Domain.Publication.Publication model)
             => ViewModel = new OkObjectResult(new PublicationResponse(model.Id, model.Autor, 
                 model.Title, model.Content, model.DateCreated, model.Comments, model.Topic));
 
-        public void Standard(IList<Domain.Publication.Publication> model)
+        public void Standard(IList<ApiClean.Domain.Publication.Publication> model)
         {
             var publicationsResponse = new List<PublicationResponse>();
-            model.ToList().ForEach(s => publicationsResponse.Add(new PublicationResponse(p.Id, p.Autor,
+            model.ToList().ForEach(p => publicationsResponse.Add(new PublicationResponse(p.Id, p.Autor,
                 p.Title, p.Content, p.DateCreated, p.Comments, p.Topic)));
             ViewModel = new OkObjectResult(publicationsResponse);
         }

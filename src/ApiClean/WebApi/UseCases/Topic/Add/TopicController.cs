@@ -1,8 +1,9 @@
 ﻿using System;
-using Application.UseCases.Topic.Save;
+using ApiClean.Application.UseCases.Topic.Save;
 using Microsoft.AspNetCore.Mvc;
+using WebApi.UseCases.Topic;
 
-namespace WebApi.UseCases.Topic.Add
+namespace ApiClean.WebApi.UseCases.Topic.Add
 {
     [Route("api/[controller]")]
     [ApiController]

@@ -1,4 +1,5 @@
-﻿using Application.UseCases.Publication.Save;
+﻿using ApiClean.Application.UseCases.Publication.Save;
+using ApiClean.WebApi.UseCases.Publication.Update;
 using Microsoft.AspNetCore.Mvc;
 using System;
 

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WebApi.UseCases.User
+namespace ApiClean.WebApi.UseCases.User
 {
     public class UserResponse
     {

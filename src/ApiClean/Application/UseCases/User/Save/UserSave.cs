@@ -1,10 +1,10 @@
 ﻿using ApiClean.Application.Boundaries.User;
-using ApiClean.Application.UseCases.Comment.Save.Handlers;
+using ApiClean.Application.UseCases.User.Save.Handlers;
 using System;
 
 namespace ApiClean.Application.UseCases.User.Save
 {
-    class UserSave : IUserSave
+    class UserSave : IUserSave 
     {
         private readonly IOutputPortUser output;
         private readonly ValidateHandler validateHandler;

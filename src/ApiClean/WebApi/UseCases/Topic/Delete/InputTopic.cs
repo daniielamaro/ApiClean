@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 
 
-namespace WebApi.UseCases.Topic.Delete
+namespace ApiClean.WebApi.UseCases.Topic.Delete
 {
     public class InputTopic
     {

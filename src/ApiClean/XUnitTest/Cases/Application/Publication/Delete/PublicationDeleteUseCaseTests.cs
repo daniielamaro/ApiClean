@@ -1,8 +1,4 @@
 ﻿using ApiClean.Application.Repositories;
-using Application.UseCases.Publication.Delete;
-using Application.UseCases.Topic.Delete;
-using Application.UseCases.User.Delete;
-using DemoCleanArchitecture.Tests.TestCaseOrdering;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -10,6 +6,8 @@ using WebApi.UseCases.Publication;
 using Xunit;
 using Xunit.Frameworks.Autofac;
 using ApiClean.Tests.XUnitTest.Builders;
+using ApiClean.Application.UseCases.Publication.Delete;
+using ApiClean.Tests.TestCaseOrdering;
 
 namespace ApiClean.Tests.XUnitTest.Cases.Application.Publication.Delete
 {

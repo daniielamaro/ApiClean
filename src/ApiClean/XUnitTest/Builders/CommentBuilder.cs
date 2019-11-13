@@ -1,6 +1,5 @@
 ﻿using ApiClean.Domain.Comment;
-using Domain.Comment;
-using Domain.User;
+using ApiClean.Domain.User;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,6 +11,7 @@ namespace ApiClean.Tests.XUnitTest.Builders
         public Guid Id;
         public User Autor;
         public string Content;
+        public List<Comment> Comment;
         public Guid PublicationId;
 
         public static CommentBuilder New()

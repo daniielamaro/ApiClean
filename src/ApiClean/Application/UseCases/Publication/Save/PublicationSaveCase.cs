@@ -7,7 +7,7 @@ using System.Text;
 
 namespace ApiClean.Application.UseCases.Publication.Save
 {
-    class PublicationSaveCase
+    public class PublicationSaveCase : IPublicationSaveCase
     {
         private readonly IOutputPortPublication output;
         private readonly ValidateHandler validateHandler;

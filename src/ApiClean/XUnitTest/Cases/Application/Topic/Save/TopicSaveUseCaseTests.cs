@@ -1,5 +1,5 @@
-﻿using Application.UseCases.Topic.Save;
-using DemoCleanArchitecture.Tests.TestCaseOrdering;
+﻿using ApiClean.Application.UseCases.Topic.Save;
+using ApiClean.Tests.TestCaseOrdering;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -28,7 +28,7 @@ namespace ApiClean.Tests.XUnitTest.Cases.Application.Topic.Save
         public void ShouldAddNewCustomerAndReturnOK()
         {
             var request = new TopicSaveRequest("TopicTest");
-            UserId = request.Topic.Id;
+            TopicId = request.Topic.Id;
             topicSaveUseCase.Execute(request);
             presenter.ViewModel.Should().BeOfType<OkObjectResult>();
         }

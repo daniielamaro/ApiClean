@@ -1,4 +1,4 @@
-﻿using Application.Boundaries.Topic;
+﻿using ApiClean.Application.Boundaries.Topic;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -27,10 +27,10 @@ namespace WebApi.UseCases.Topic
         public void Standard(Guid id)
            => ViewModel = new OkObjectResult(id);
 
-        public void Standard(Domain.Topic.Topic topic)
+        public void Standard(ApiClean.Domain.Topic.Topic topic)
             => ViewModel = new OkObjectResult(new TopicResponse(topic.Id, topic.Name));
 
-        public void Standard(IList<Domain.Topic.Topic> topic)
+        public void Standard(IList<ApiClean.Domain.Topic.Topic> topic)
         {
             var topicsResponse = new List<TopicResponse>();
             topic.ToList().ForEach(t => topicsResponse.Add(new TopicResponse(t.Id, t.Name)));

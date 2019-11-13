@@ -1,12 +1,10 @@
-﻿using Application.UseCases.Publication.GetAll;
-using Application.UseCases.User.GetAll;
+﻿using ApiClean.Application.UseCases.Publication.GetAll;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using WebApi.UseCases.Publication;
-using WebApi.UseCases.User;
 using Xunit;
 
 namespace ApiClean.Tests.XUnitTest.Cases.Application.Publication.GetAll

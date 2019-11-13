@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace WebApi.UseCases.Topic.Get
+namespace ApiClean.WebApi.UseCases.Topic.Get
 {
     public class InputTopic
     {

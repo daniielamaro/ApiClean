@@ -1,4 +1,4 @@
-﻿using Application.UseCases.Publication.GetAll;
+﻿using ApiClean.Application.UseCases.Publication.GetAll;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 

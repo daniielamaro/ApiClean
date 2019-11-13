@@ -1,7 +1,5 @@
-﻿using Application.UseCases.Comment.Save;
-using Application.UseCases.Publication.Save;
-using Application.UseCases.Topic.Save;
-using DemoCleanArchitecture.Tests.TestCaseOrdering;
+﻿using ApiClean.Application.UseCases.Comment.Save;
+using ApiClean.Tests.TestCaseOrdering;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -29,7 +27,7 @@ namespace ApiClean.Tests.XUnitTest.Cases.Application.Comment.Save
         [TestPriority(1)]
         public void ShouldAddNewCustomerAndReturnOK()
         {
-            var request = new CommentSaveRequest("TopicTest");
+            var request = new CommentSaveRequest(Guid.NewGuid(), Builders.UserBuilder.New().Build(), "Comment", Builders.PublicationBuilder.New().Id);
             commentId = request.Comment.Id;
             commentSaveUseCase.Execute(request);
             presenter.ViewModel.Should().BeOfType<OkObjectResult>();
@@ -39,7 +37,7 @@ namespace ApiClean.Tests.XUnitTest.Cases.Application.Comment.Save
         [TestPriority(2)]
         public void ShouldUpdateCustomerAndReturnOK()
         {
-            var request = new CommentSaveRequest("TopicTestUpdate");
+            var request = new CommentSaveRequest(Guid.NewGuid(), Builders.UserBuilder.New().Build(), "CommentUpdate", Builders.PublicationBuilder.New().Id);
             commentSaveUseCase.Execute(request);
             presenter.ViewModel.Should().BeOfType<OkObjectResult>();
         }
@@ -47,7 +45,7 @@ namespace ApiClean.Tests.XUnitTest.Cases.Application.Comment.Save
         [Fact]
         public void ShouldNotAddNewCustomerAndReturnError()
         {
-            var request = new CommentSaveRequest("");
+            var request = new CommentSaveRequest(Guid.NewGuid(), Builders.UserBuilder.New().Build(), "", Builders.PublicationBuilder.New().Id);
             commentSaveUseCase.Execute(request);
             presenter.ViewModel.Should().BeOfType<BadRequestObjectResult>();
         }
@@ -55,7 +53,7 @@ namespace ApiClean.Tests.XUnitTest.Cases.Application.Comment.Save
         [Fact]
         public void ShouldNotUpdateCustomerAndReturnError()
         {
-            var request = new CommentSaveRequest(commentId, "");
+            var request = new CommentSaveRequest(commentId, Builders.UserBuilder.New().Build(), "Comment", Builders.PublicationBuilder.New().Id);
             commentSaveUseCase.Execute(request);
             presenter.ViewModel.Should().BeOfType<BadRequestObjectResult>();
         }

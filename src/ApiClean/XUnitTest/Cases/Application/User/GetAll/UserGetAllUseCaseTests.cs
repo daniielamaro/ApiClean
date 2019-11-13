@@ -1,14 +1,15 @@
-﻿using Application.UseCases.User.GetAll;
-using FluentAssertions;
+﻿using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using WebApi.UseCases.User;
+using ApiClean.WebApi.UseCases.User;
+using ApiClean.Application.UseCases.User.GetAll;
+using Xunit;
 
 namespace ApiClean.Tests.XUnitTest.Cases.Application.User.GetAll
 {
-    class UserGetAllUseCaseTests
+    public class UserGetAllUseCaseTests
     {
         private readonly IUserGetAll userGetAllUseCase;
         private readonly UserPresenter presenter;

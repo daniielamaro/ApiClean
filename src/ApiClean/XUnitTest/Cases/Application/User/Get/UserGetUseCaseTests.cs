@@ -1,16 +1,15 @@
 ﻿using ApiClean.Application.Repositories;
-using Application.UseCases.User.Get;
-using DemoCleanArchitecture.Tests.TestCaseOrdering;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using WebApi.UseCases.User;
 using Xunit;
 using Xunit.Frameworks.Autofac;
 using ApiClean.Tests.XUnitTest.Builders;
 using ApiClean.Application.UseCases.User.Get;
+using ApiClean.WebApi.UseCases.User;
+using ApiClean.Tests.TestCaseOrdering;
 
 namespace ApiClean.Tests.XUnitTest.Cases.Application.User.Get
 {

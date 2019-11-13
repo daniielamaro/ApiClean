@@ -1,15 +1,16 @@
-﻿using System;
+﻿using ApiClean.Domain.Comment;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using Domain.Comment;
 
-namespace WebApi.UseCases.Publication.Update
+namespace ApiClean.WebApi.UseCases.Publication.Update
 {
     public class InputPublication
     {
         [Required]
         public Guid Id { get; private set; }
         [Required]
-        public Domain.User.User Autor { get; private set; }
+        public ApiClean.Domain.User.User Autor { get; private set; }
         [Required]
         public string Title { get; private set; }
         [Required]
@@ -19,6 +20,6 @@ namespace WebApi.UseCases.Publication.Update
         [Required]
         public List<Comment> Comments { get; private set; }
         [Required]
-        public Domain.Topic.Topic Topic { get; private set; }
+        public ApiClean.Domain.Topic.Topic Topic { get; private set; }
     }
 }

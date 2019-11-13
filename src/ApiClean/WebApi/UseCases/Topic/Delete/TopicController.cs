@@ -1,8 +1,9 @@
 ﻿using System;
-using Application.UseCases.Topic.Delete;
+using ApiClean.Application.UseCases.Topic.Delete;
 using Microsoft.AspNetCore.Mvc;
+using WebApi.UseCases.Topic;
 
-namespace WebApi.UseCases.Topic.Delete
+namespace ApiClean.WebApi.UseCases.Topic.Delete
 {
     [Route("api/[controller]")]
     [ApiController]
