@@ -1,8 +1,11 @@
 ﻿using ApiClean.Application.Repositories;
 using AutoMapper;
 using Domain.Publication;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace Infrastructure.PostgresDataAccess.Repositories
@@ -48,55 +51,55 @@ namespace Infrastructure.PostgresDataAccess.Repositories
             }
         }
 
-        public int Delete(User user)
+        public int Delete(Publication publication)
         {
             using (var context = new Context())
             {
-                var model = context.Users.FirstOrDefault(u => u.Id == user.Id);
-                context.Users.Remove(model);
+                var model = context.Publications.FirstOrDefault(u => u.Id == publication.Id);
+                context.Publications.Remove(model);
                 return context.SaveChanges();
             }
         }
 
-        public IList<User> GetAll()
+        public IList<Publication> GetAll()
         {
-            var list = new List<User>();
+            var list = new List<Publication>();
             using (var context = new Context())
             {
-                list = mapper.Map<List<User>>(context.Users.ToList());
+                list = mapper.Map<List<Publication>>(context.Publications.ToList());
             }
             return list;
         }
 
-        public IList<User> GetByFilter(Expression<Func<User, bool>> filter)
+        public IList<Publication> GetByFilter(Expression<Func<Publication, bool>> filter)
         {
             using (var context = new Context())
             {
-                return mapper.Map<List<User>>(context.Users.Where(mapper.Map<Expression<Func<Entities.User.User, bool>>>(filter)).ToList());
+                return mapper.Map<List<Publication>>(context.Publications.Where(mapper.Map<Expression<Func<Entities.Publication.Publication, bool>>>(filter)).ToList());
             }
         }
 
-        public User GetById(Guid id)
+        public Publication GetById(Guid id)
         {
             using (var context = new Context())
             {
-                return mapper.Map<User>(context.Users.FirstOrDefault(u => u.Id == id));
+                return mapper.Map<Publication>(context.Publications.FirstOrDefault(u => u.Id == id));
             }
         }
 
-        public int Save(User user)
+        public int Save(Publication publication)
         {
-            if (GetById(user.Id) == null)
-                return Add(user);
+            if (GetById(publication.Id) == null)
+                return Add(publication);
             else
-                return Update(user);
+                return Update(publication);
         }
 
-        public int Update(User user)
+        public int Update(Publication publication)
         {
             using (var context = new Context())
             {
-                context.Entry(mapper.Map<Entities.User.User>(user)).State = EntityState.Modified;
+                context.Entry(mapper.Map<Entities.Publication.Publication>(publication)).State = EntityState.Modified;
                 return context.SaveChanges();
             }
         }
