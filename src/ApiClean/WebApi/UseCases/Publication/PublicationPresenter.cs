@@ -34,8 +34,8 @@ namespace WebApi.UseCases.Publication
         public void Standard(IList<Domain.Publication.Publication> model)
         {
             var publicationsResponse = new List<PublicationResponse>();
-            model.ToList().ForEach(s => publicationsResponse.Add(new PublicationResponse(s.Id, s.Autor,
-                s.Title, s.Content, s.DateCreated, s.Comments, s.Topic)));
+            model.ToList().ForEach(p => publicationsResponse.Add(new PublicationResponse(p.Id, p.Autor,
+                p.Title, p.Content, p.DateCreated, p.Comments, p.Topic)));
             ViewModel = new OkObjectResult(publicationsResponse);
         }
     }

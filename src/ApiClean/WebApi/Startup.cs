@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Autofac;
 using Autofac.Configuration;
 using Autofac.Extensions.DependencyInjection;
@@ -12,12 +14,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Rewrite;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using NSwag;
 using WebApi.Modules;
 using WebApi.Swagger;
 
-[assembly: ApiConventionType(typeof(ApiConventions))]
+[assembly: ApiConventionType(typeof(ApiConventions))] 
 
 namespace WebApi
 {
@@ -30,7 +33,8 @@ namespace WebApi
 
         public IConfiguration Configuration { get; }
 
-        public void ConfigureContainer(ContainerBuilder builder)
+        // This method gets called by the runtime. Use this method to add services to the container.
+        public void ConfigureContainer (ContainerBuilder builder)
         {
             builder.RegisterModule(new ConfigurationModule(Configuration));
         }
@@ -70,10 +74,8 @@ namespace WebApi
             var container = builder.Build();
             return new AutofacServiceProvider(container);
         }
-
-
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostEnvironment env)
+        
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -101,8 +103,7 @@ namespace WebApi
                 };
             });
 
-            app.UseSwaggerUi3(config => config.TransformToExternalPath = (route, request) => ExtractPath(request) + route);
-
+            app.UseSwaggerUi3(config => config.TransformToExternalPath = (route, request) => ExtractPath(request) + route);            
             var option = new RewriteOptions();
             option.AddRedirect("^$", "swagger");
 
@@ -114,7 +115,7 @@ namespace WebApi
                 new Uri($"{ExtractProto(request)}://{request.Headers["X-Forwarded-Host"].First()}").Host :
                     request.Host.Value;
 
-        private string ExtractProto(HttpRequest request) =>
+         private string ExtractProto(HttpRequest request) =>
             request.Headers["X-Forwarded-Proto"].FirstOrDefault() ?? request.Protocol;
 
         private string ExtractPath(HttpRequest request) =>
