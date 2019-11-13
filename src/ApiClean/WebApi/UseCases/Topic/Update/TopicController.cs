@@ -19,12 +19,12 @@ namespace WebApi.UseCases.Topic.Update
         }
 
         [HttpPost]
-        [Route("CreateTopic")]
+        [Route("UpdateTopic")]
         [ProducesResponseType(typeof(Guid), 200)]
         [ProducesResponseType(typeof(ProblemDetails), 400)]
-        public IActionResult CreateTopic([FromBody] InputTopic input)
+        public IActionResult UpdateTopic([FromBody] InputTopic input)
         {
-            var request = new TopicSaveRequest(input.Name);
+            var request = new TopicSaveRequest(input.Id, input.Name);
             topicSaveUseCase.Execute(request);
             return presenter.ViewModel;
         }

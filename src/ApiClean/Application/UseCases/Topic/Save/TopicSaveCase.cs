@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Application.UseCases.Topic.Save
 {
-    public class TopicSaveCase
+    public class TopicSaveCase : ITopicSaveCase
     {
         private readonly IOutputPortTopic output;
         private readonly ValidateHandler validateHandler;

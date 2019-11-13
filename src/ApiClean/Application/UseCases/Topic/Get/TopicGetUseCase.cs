@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Application.UseCases.Topic.Get
 {
-    public class TopicGetUseCase
+    public class TopicGetUseCase : ITopicGetUseCase
     {
         private readonly IOutputPortTopic output;
         private readonly ITopicReadOnlyRepository topicReadOnlyRepository;
@@ -22,13 +22,13 @@ namespace Application.UseCases.Topic.Get
         {
             try
             {
-                var customer = topicReadOnlyRepository.GetById(request.TopicId);
-                if (customer == null)
+                var topic = topicReadOnlyRepository.GetById(request.TopicId);
+                if (topic == null)
                 {
                     output.NotFound($"Not found topic with id: {request.TopicId}");
                     return;
                 }
-                output.Standard(customer);
+                output.Standard(topic);
             }
             catch (Exception ex)
             {

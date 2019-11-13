@@ -12,16 +12,13 @@ namespace Infrastructure.PostgresDataAccess.Entities.Map.Publication
         {
             builder.ToTable("Publication", "ApiClean");
             builder.HasKey(u => u.Id);
-            builder.Property(u => u.Autor).IsRequired();
+            builder.Property(u => u.AutorId).IsRequired();
             builder.Property(u => u.Title).IsRequired();
             builder.Property(u => u.Content).IsRequired();
             builder.Property(u => u.DateCreated).IsRequired();
-            builder.Property(u => u.Topic).IsRequired();
-
-            builder.HasOne(u => u.Autor);
-            builder.HasOne(u => u.Topic);
-            builder.HasMany(u => u.Comments);
+            builder.Property(u => u.TopicId).IsRequired();            
             
+            builder.HasMany(u => u.Comments);            
         }
     }
 }

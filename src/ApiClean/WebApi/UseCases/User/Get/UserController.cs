@@ -20,7 +20,6 @@ namespace WebApi.UseCases.User.Get
         [Route("GetUser")]
         [ProducesResponseType(typeof(UserResponse), 200)]
         [ProducesResponseType(typeof(ProblemDetails), 400)]
-
         public IActionResult GetUser([FromBody] InputUser input)
         {
             var request = new UserGetRequest(input.UserId);
