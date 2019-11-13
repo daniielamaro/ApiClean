@@ -20,7 +20,8 @@ namespace Application.UseCases.User.Delete
             try
             {
                 var alfa = userWriteOnlyRepository.Delete(request.UserId);
-                if(alfa == 0)
+
+                if(alfa == 1)
                 {
                     output.Standard(request.UserId);
                 }

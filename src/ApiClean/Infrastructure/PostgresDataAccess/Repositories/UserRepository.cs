@@ -46,6 +46,7 @@ namespace Infrastructure.PostgresDataAccess.Repositories
             {
                 var model = context.Users.FirstOrDefault(u => u.Id == id);
                 context.Users.Remove(model);
+                
                 return context.SaveChanges();
             }
         }

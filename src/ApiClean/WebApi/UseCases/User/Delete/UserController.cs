@@ -19,7 +19,7 @@ namespace WebApi.UseCases.User.Delete
         }
 
         [HttpDelete]
-        [Route("DeleteCustomer")]
+        [Route("DeleteUser")]
         [ProducesResponseType(typeof(Guid), 200)]
         [ProducesResponseType(typeof(ProblemDetails), 400)]
         public IActionResult DeleteUser([FromBody] InputUser input)
