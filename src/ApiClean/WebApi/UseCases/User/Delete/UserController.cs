@@ -6,7 +6,6 @@ namespace WebApi.UseCases.User.Delete
 {
     [Route("api/[controller]")]
     [ApiController]
-
     public class UserController : ControllerBase
     {
         private readonly UserPresenter presenter;

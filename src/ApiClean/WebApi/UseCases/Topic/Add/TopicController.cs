@@ -19,10 +19,10 @@ namespace WebApi.UseCases.Topic.Add
         }
 
         [HttpPost]
-        [Route("CreateCustomer")]
+        [Route("CreateTopic")]
         [ProducesResponseType(typeof(Guid), 200)]
         [ProducesResponseType(typeof(ProblemDetails), 400)]
-        public IActionResult CreateCustomer([FromBody] InputTopic input)
+        public IActionResult CreateTopic([FromBody] InputTopic input)
         {
             var request = new TopicSaveRequest(input.Name);
             topicSaveUseCase.Execute(request);

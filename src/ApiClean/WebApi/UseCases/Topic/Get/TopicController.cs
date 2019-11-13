@@ -21,7 +21,7 @@ namespace WebApi.UseCases.Topic.Get
         [Route("GetTopic")]
         [ProducesResponseType(typeof(Guid), 200)]
         [ProducesResponseType(typeof(ProblemDetails), 400)]
-        public IActionResult DeleteCustomer([FromBody] InputTopic input)
+        public IActionResult DeleteTopic([FromBody] InputTopic input)
         {
             var request = new TopicGetRequest(input.TopicId);
             topicGetUseCase.Execute(request);

@@ -33,9 +33,9 @@ namespace WebApi.UseCases.User
 
         public void Standard(IList<Domain.User.User> user)
         {
-            var customersResponse = new List<UserResponse>();
-            user.ToList().ForEach(s => customersResponse.Add(new UserResponse(s.Id, s.Name, s.Email, s.Password)));
-            ViewModel = new OkObjectResult(customersResponse);
+            var usersResponse = new List<UserResponse>();
+            user.ToList().ForEach(s => usersResponse.Add(new UserResponse(s.Id, s.Name, s.Email, s.Password)));
+            ViewModel = new OkObjectResult(usersResponse);
         }
     }
 }
