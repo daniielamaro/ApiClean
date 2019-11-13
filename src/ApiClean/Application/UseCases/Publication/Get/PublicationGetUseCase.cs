@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Application.UseCases.Publication.Get
 {
-    public class PublicationGetUseCase
+    public class PublicationGetUseCase : IPublicationGetUseCase
     {
         private readonly IOutputPortPublication output;
         private readonly IPublicationReadOnlyRepository publicationReadOnlyRepository;

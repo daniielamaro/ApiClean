@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Application.UseCases.Topic.Get
 {
-    public class TopicGetUseCase
+    public class TopicGetUseCase : ITopicGetUseCase
     {
         private readonly IOutputPortTopic output;
         private readonly ITopicReadOnlyRepository topicReadOnlyRepository;

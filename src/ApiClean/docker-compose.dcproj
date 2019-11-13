@@ -3,9 +3,9 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>37c7f859-69fd-47ad-b9d2-30f6d0500729</ProjectGuid>
+    <ProjectGuid>c1845331-8e3d-4e57-8ad7-5730a8c3cf1a</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
-    <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/api/values</DockerServiceUrl>
+    <DockerServiceUrl>{Scheme}://localhost:{ServicePort}</DockerServiceUrl>
     <DockerServiceName>webapi</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>

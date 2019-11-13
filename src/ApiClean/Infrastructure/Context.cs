@@ -16,6 +16,13 @@ namespace Infrastructure
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Publication> Publications { get; set; }
 
+        public Context(DbContextOptions options) : base(options)
+        {
+        }
+
+        public Context()
+        {
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -39,7 +46,9 @@ namespace Infrastructure
             modelBuilder.ApplyConfiguration(new PostgresDataAccess.Entities.Map.Topic.TopicMap());
             modelBuilder.ApplyConfiguration(new PostgresDataAccess.Entities.Map.Comment.CommentMap());
             modelBuilder.ApplyConfiguration(new PostgresDataAccess.Entities.Map.Publication.PublicationMap());
+
             modelBuilder.Ignore<ValidationResult>();
+
             base.OnModelCreating(modelBuilder);
         }
 
