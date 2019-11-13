@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace WebApi.UseCases.Comment
+namespace ApiClean.WebApi.UseCases.Comment
 {
     public class CommentPresenter : IOutputPortComment
     {

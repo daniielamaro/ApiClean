@@ -27,7 +27,7 @@ namespace ApiClean.WebApi.UseCases.User
 
         public void Standard(Guid id)
            => ViewModel = new OkObjectResult(id);
-         
+
         public void Standard(ApiClean.Domain.User.User user)
             => ViewModel = new OkObjectResult(new UserResponse(user.Id, user.Name, user.Email, user.Password));
 

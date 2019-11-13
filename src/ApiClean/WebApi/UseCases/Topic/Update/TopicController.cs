@@ -2,29 +2,30 @@
 using ApiClean.Application.UseCases.Topic.Save;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebApi.UseCases.Topic.Save
+namespace WebApi.UseCases.Topic.Update
 {
     [Route("api/[controller]")]
     [ApiController]
     public class TopicController : ControllerBase
     {
-        private readonly TopicPresenter presenter;
-        private readonly ITopicSaveCase topicSaveCase;
 
-        public TopicController(TopicPresenter presenter, ITopicSaveCase topicSaveCase)
+        private readonly TopicPresenter presenter;
+        private readonly ITopicSaveCase topicSaveUseCase;
+
+        public TopicController(TopicPresenter presenter, ITopicSaveCase topicSaveUseCase)
         {
             this.presenter = presenter;
-            this.topicSaveCase = topicSaveCase;
+            this.topicSaveUseCase = topicSaveUseCase;
         }
 
-        [HttpPut]
-        [Route("SaveTopic")]
+        [HttpPost]
+        [Route("UpdateTopic")]
         [ProducesResponseType(typeof(Guid), 200)]
         [ProducesResponseType(typeof(ProblemDetails), 400)]
-        public IActionResult SaveTopic([FromBody] InputTopic input)
+        public IActionResult UpdateTopic([FromBody] InputTopic input)
         {
             var request = new TopicSaveRequest(input.Id, input.Name);
-            topicSaveCase.Execute(request);
+            topicSaveUseCase.Execute(request);
             return presenter.ViewModel;
         }
     }

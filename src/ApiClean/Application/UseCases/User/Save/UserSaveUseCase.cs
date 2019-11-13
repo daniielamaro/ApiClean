@@ -9,7 +9,7 @@ namespace ApiClean.Application.UseCases.User.Save
         private readonly IOutputPortUser output;
         private readonly ValidateHandler validateHandler;
 
-        public UserSave(IOutputPortUser output, ValidateHandler validateHandler, SaveHandler saveHandler)
+        public UserSaveUseCase(IOutputPortUser output, ValidateHandler validateHandler, SaveHandler saveHandler)
         {
             this.output = output;
             this.validateHandler = validateHandler;

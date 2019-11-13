@@ -10,19 +10,19 @@ namespace ApiClean.Application.UseCases.Publication.Delete
     public class PublicationDeleteUseCase : IPublicationDeleteUseCase
     {
         private readonly IOutputPortPublication output;
-        private readonly IPublicationWriteOnlyRepository pubWriteOnlyRepository;
+        private readonly IPublicationWriteOnlyRepository publicationWriteOnlyRepository;
 
-        public PublicationDeleteUseCase(IOutputPortPublication output, IPublicationWriteOnlyRepository pubWriteOnlyRepository)
+        public PublicationDeleteUseCase(IOutputPortPublication output, IPublicationWriteOnlyRepository publicationWriteOnlyRepository)
         {
             this.output = output;
-            this.pubWriteOnlyRepository = pubWriteOnlyRepository;
+            this.publicationWriteOnlyRepository = publicationWriteOnlyRepository;
         }
 
         public void Execute(PublicationDeleteRequest request)
         {
             try
             {
-                var ret = pubWriteOnlyRepository.Delete(request.PubId);
+                var ret = publicationWriteOnlyRepository.Delete(request.PubId);
                 if (ret == 0)
                 {
                     output.Error($"Error on process Delete Publication");

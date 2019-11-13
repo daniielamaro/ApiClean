@@ -1,8 +1,11 @@
-﻿using System;
-using ApiClean.Application.UseCases.Comment.Save;
+﻿using Application.UseCases.Comment.Save;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace ApiClean.WebApi.UseCases.Comment.Add
+namespace WebApi.UseCases.Comment.Update
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -17,14 +20,13 @@ namespace ApiClean.WebApi.UseCases.Comment.Add
             this.commentSaveUseCase = commentSaveUseCase;
         }
 
-        [HttpPost]
-        [Route("CreateComment")]
+        [HttpPut]
+        [Route("UpdateCustomer")]
         [ProducesResponseType(typeof(Guid), 200)]
-        [ProducesResponseType(typeof(ProblemDetails), 404)]
-
-        public IActionResult CreateComent([FromBody] InputComment input)
+        [ProducesResponseType(typeof(ProblemDetails), 400)]
+        public IActionResult UpdateCustomer([FromBody] InputComment input)
         {
-            var request = new CommentSaveRequest(input.User, input.Content, input.PublicationId);
+            var request = new CommentSaveRequest(input.Id, input.Autor, input.Content, input.PublicationId);
             commentSaveUseCase.Execute(request);
             return presenter.ViewModel;
         }

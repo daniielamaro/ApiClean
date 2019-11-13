@@ -22,7 +22,7 @@ namespace ApiClean.WebApi.UseCases.Topic.Delete
         [Route("DeleteTopic")]
         [ProducesResponseType(typeof(Guid), 200)]
         [ProducesResponseType(typeof(ProblemDetails), 400)]
-        public IActionResult DeleteCustomer([FromBody] InputTopic input)
+        public IActionResult DeleteTopic([FromBody] InputTopic input)
         {
             var request = new TopicDeleteRequest(input.TopicId);
             topicDeleteUseCase.Execute(request);

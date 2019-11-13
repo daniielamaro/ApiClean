@@ -1,5 +1,8 @@
 ﻿using Autofac;
+using WebApi.UseCases.Comment;
+using WebApi.UseCases.Publication;
 using WebApi.UseCases.Topic;
+using WebApi.UseCases.User;
 
 namespace ApiClean.WebApi.Modules
 {
@@ -10,7 +13,10 @@ namespace ApiClean.WebApi.Modules
             builder.RegisterAssemblyTypes(typeof(Startup).Assembly)
                 .AsSelf().InstancePerLifetimeScope();
 
+            builder.RegisterType<UserPresenter>().As<Application.Boundaries.User.IOutputPortUser>().AsSelf().InstancePerLifetimeScope();
             builder.RegisterType<TopicPresenter>().As<Application.Boundaries.Topic.IOutputPortTopic>().AsSelf().InstancePerLifetimeScope();
+            builder.RegisterType<CommentPresenter>().As<Application.Boundaries.Comment.IOutputPortComment>().AsSelf().InstancePerLifetimeScope();
+            builder.RegisterType<PublicationPresenter>().As<Application.Boundaries.Publication.IOutputPortPublication>().AsSelf().InstancePerLifetimeScope();
         }
     }
 }

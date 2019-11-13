@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Infrastructure.PostgresDataAccess.Entities.Publication;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -13,7 +14,15 @@ namespace ApiClean.Infrastructure
         public DbSet<User> Users { get; set; }
         public DbSet<Topic> Topics { get; set; }
         public DbSet<Comment> Comments { get; set; }
+        public DbSet<Publication> Publications { get; set; }
 
+        public Context(DbContextOptions options) : base(options)
+        {
+        }
+
+        public Context()
+        {
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -36,7 +45,10 @@ namespace ApiClean.Infrastructure
             modelBuilder.ApplyConfiguration(new PostgresDataAccess.Entities.Map.User.UserMap());
             modelBuilder.ApplyConfiguration(new PostgresDataAccess.Entities.Map.Topic.TopicMap());
             modelBuilder.ApplyConfiguration(new PostgresDataAccess.Entities.Map.Comment.CommentMap());
+            modelBuilder.ApplyConfiguration(new PostgresDataAccess.Entities.Map.Publication.PublicationMap());
+
             modelBuilder.Ignore<ValidationResult>();
+
             base.OnModelCreating(modelBuilder);
         }
 

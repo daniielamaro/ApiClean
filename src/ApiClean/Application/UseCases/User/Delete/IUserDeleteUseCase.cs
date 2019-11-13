@@ -1,6 +1,6 @@
 ﻿namespace ApiClean.Application.UseCases.User.Delete
 {
-    public interface IUserDelete
+    public interface IUserDeleteUseCase
     {
         void Execute(UserDeleteRequest request);
     }

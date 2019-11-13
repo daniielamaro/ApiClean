@@ -4,12 +4,12 @@ using System;
 
 namespace ApiClean.Application.UseCases.User.Delete
 {
-    public class UserDelete : IUserDelete
+    public class UserDeleteUseCase : IUserDeleteUseCase
     {
         private readonly IOutputPortUser output;
         private readonly IUserWriteOnlyRepository userWriteOnlyRepository;
 
-        public UserDelete(IOutputPortUser output, IUserWriteOnlyRepository userWriteOnlyRepository)
+        public UserDeleteUseCase(IOutputPortUser output, IUserWriteOnlyRepository userWriteOnlyRepository)
         {
             this.output = output;
             this.userWriteOnlyRepository = userWriteOnlyRepository;
@@ -20,7 +20,8 @@ namespace ApiClean.Application.UseCases.User.Delete
             try
             {
                 var alfa = userWriteOnlyRepository.Delete(request.UserId);
-                if(alfa == 0)
+
+                if(alfa == 1)
                 {
                     output.Standard(request.UserId);
                 }

@@ -4,12 +4,12 @@ using System;
 
 namespace ApiClean.Application.UseCases.User.Get
 {
-    public class UserGet
+    public class UserGetUseCase : IUserGetUseCase
     {
-        private readonly IUserReadOnlyRepository userReadOnlyRepository;
         private readonly IOutputPortUser output;
+        private readonly IUserReadOnlyRepository userReadOnlyRepository;
 
-        public UserGet(IOutputPortUser output, IUserReadOnlyRepository userReadOnlyRepository)
+        public UserGetUseCase(IOutputPortUser output, IUserReadOnlyRepository userReadOnlyRepository)
         {
             this.output = output;
             this.userReadOnlyRepository = userReadOnlyRepository;
@@ -20,16 +20,16 @@ namespace ApiClean.Application.UseCases.User.Get
             try
             {
                 var user = userReadOnlyRepository.GetById(request.UserId);
-                if(user == null)
+                if (user == null)
                 {
-                    output.NotFound($"User not found with id: {request.UserId}");
+                    output.NotFound($"Not found user with id: {request.UserId}");
                     return;
                 }
                 output.Standard(user);
             }
-            catch(Exception e)
+            catch (Exception ex)
             {
-                output.Error($"Error on process: {e.Message}");
+                output.Error($"Error on process: {ex.Message}");
             }
         }
     }
