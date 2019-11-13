@@ -11,7 +11,7 @@ namespace WebApi.UseCases.Publication.Delete
         private readonly PublicationPresenter presenter;
         private readonly IPublicationDeleteUseCase publicationDeleteUseCase;
 
-        public PublicationController(PublicationPresenter presenter, IPublicationDeleteUseCase customerDeleteUseCase)
+        public PublicationController(PublicationPresenter presenter, IPublicationDeleteUseCase publicationDeleteUseCase)
         {
             this.presenter = presenter;
             this.publicationDeleteUseCase = publicationDeleteUseCase;

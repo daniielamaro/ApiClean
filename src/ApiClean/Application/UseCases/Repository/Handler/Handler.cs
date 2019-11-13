@@ -6,7 +6,7 @@
 
         public void SetSucessor(Handler<T> sucessor)
         {
-            sucessor = sucessor;
+            this.sucessor = sucessor;
         }
 
         public abstract void ProcessRequest(T request);
