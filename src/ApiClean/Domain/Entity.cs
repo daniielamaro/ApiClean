@@ -1,14 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.ComponentModel.DataAnnotations.Schema;
 using FluentValidation.Results;
 using FluentValidation;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain
 {
     public class Entity : IEntity
     {
+        [System.ComponentModel.DataAnnotations.Key]
         public Guid Id { get; set; }
 
         [NotMapped]
