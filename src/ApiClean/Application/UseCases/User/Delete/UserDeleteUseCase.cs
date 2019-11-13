@@ -21,10 +21,12 @@ namespace Application.UseCases.User.Delete
             {
                 var alfa = userWriteOnlyRepository.Delete(request.UserId);
 
-                if(alfa == 1)
+                if(alfa == 0)
                 {
-                    output.Standard(request.UserId);
+                    output.Error($"Error on process Delete Topic");
+                    return;
                 }
+                output.Standard(request.UserId);
             }
             catch(Exception e)
             {

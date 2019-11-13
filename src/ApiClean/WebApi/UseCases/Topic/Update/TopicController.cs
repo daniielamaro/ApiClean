@@ -18,7 +18,7 @@ namespace WebApi.UseCases.Topic.Update
             this.topicSaveUseCase = topicSaveUseCase;
         }
 
-        [HttpPost]
+        [HttpPut]
         [Route("UpdateTopic")]
         [ProducesResponseType(typeof(Guid), 200)]
         [ProducesResponseType(typeof(ProblemDetails), 400)]

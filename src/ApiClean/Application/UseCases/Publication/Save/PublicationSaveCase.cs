@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Application.UseCases.Publication.Save
 {
-    class PublicationSaveCase
+    class PublicationSaveCase : IPublicationSaveCase
     {
         private readonly IOutputPortPublication output;
         private readonly ValidateHandler validateHandler;

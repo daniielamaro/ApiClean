@@ -23,7 +23,7 @@ namespace WebApi.UseCases.Publication.Update
         [ProducesResponseType(typeof(ProblemDetails), 400)]
         public IActionResult UpdatePublication([FromBody] InputPublication input)
         {
-            var request = new PublicationSaveRequest(input.Autor, input.Title, input.Content, input.DateCreated, input.Comments, input.Topic);
+            var request = new PublicationSaveRequest(input.Autor, input.Title, input.Content, input.Topic);
             publicationSaveUseCase.Execute(request);
             return presenter.ViewModel;
 
