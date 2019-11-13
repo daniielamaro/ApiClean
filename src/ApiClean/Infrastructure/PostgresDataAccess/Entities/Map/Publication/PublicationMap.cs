@@ -21,7 +21,6 @@ namespace Infrastructure.PostgresDataAccess.Entities.Map.Publication
             builder.HasOne(u => u.Autor);
             builder.HasOne(u => u.Topic);
             builder.HasMany(u => u.Comments);
-            
         }
     }
 }

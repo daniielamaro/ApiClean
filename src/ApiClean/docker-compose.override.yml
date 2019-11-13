@@ -10,7 +10,7 @@ services:
       - apicleanarchitecture-network
 
   db-postgres:
-    image: postgres:10.0
+    image: postgres
     container_name: db-postgres
     ports:
       - "5432:5432"
