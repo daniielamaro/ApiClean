@@ -1,12 +1,13 @@
 ﻿using ApiClean.Application.Repositories;
 using AutoMapper;
-using Domain.Publication;
+using ApiClean.Domain.Publication;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using ApiClean.Infrastructure;
 
 namespace Infrastructure.PostgresDataAccess.Repositories
 {
@@ -21,7 +22,7 @@ namespace Infrastructure.PostgresDataAccess.Repositories
 
         public int Add(Publication publication)
         {
-            var model = mapper.Map<Entities.Publication.Publication>(publication);
+            var model = mapper.Map<ApiClean.Infrastructure.PostgresDataAccess.Entities.Publication.Publication>(publication);
             using (Context context = new Context())
             {
                 context.Publications.Add(model);
@@ -32,7 +33,7 @@ namespace Infrastructure.PostgresDataAccess.Repositories
 
         public int Add(List<Publication> publications)
         {
-            var models = mapper.Map<List<Entities.Publication.Publication>>(publications);
+            var models = mapper.Map<List<ApiClean.Infrastructure.PostgresDataAccess.Entities.Publication.Publication>>(publications);
             using (Context context = new Context())
             {
                 context.Publications.AddRange(models);
@@ -99,7 +100,7 @@ namespace Infrastructure.PostgresDataAccess.Repositories
         {
             using (var context = new Context())
             {
-                context.Entry(mapper.Map<Entities.Publication.Publication>(publication)).State = EntityState.Modified;
+                context.Entry(mapper.Map<ApiClean.Infrastructure.PostgresDataAccess.Entities.Publication.Publication>(publication)).State = EntityState.Modified;
                 return context.SaveChanges();
             }
         }

@@ -1,11 +1,11 @@
-﻿using Infrastructure.PostgresDataAccess.Entities.Publication;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using ApiClean.Domain.User;
 using ApiClean.Domain.Comment;
 using ApiClean.Domain.Topic;
+using ApiClean.Domain.Publication;
 
 namespace ApiClean.Infrastructure
 {

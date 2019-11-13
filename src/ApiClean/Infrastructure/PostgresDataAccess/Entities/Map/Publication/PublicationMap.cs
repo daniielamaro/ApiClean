@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Infrastructure.PostgresDataAccess.Entities.Map.Publication
+namespace ApiClean.Infrastructure.PostgresDataAccess.Entities.Map.Publication
 {
     public class PublicationMap : IEntityTypeConfiguration<Entities.Publication.Publication>
     {

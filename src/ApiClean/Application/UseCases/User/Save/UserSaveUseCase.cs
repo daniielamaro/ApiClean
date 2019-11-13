@@ -4,7 +4,7 @@ using System;
 
 namespace ApiClean.Application.UseCases.User.Save
 {
-    class UserSave : IUserSave 
+    class UserSaveUseCase : IUserSaveUseCase
     {
         private readonly IOutputPortUser output;
         private readonly ValidateHandler validateHandler;
