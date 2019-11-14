@@ -35,5 +35,10 @@ namespace Application.UseCases.Publication.Get
                 output.Error($"Error on process: {ex.Message}");
             }
         }
+
+        public Domain.Publication.Publication GetObject(PublicationGetRequest request)
+        {
+            return publicationReadOnlyRepository.GetById(request.PublicationId);
+        }
     }
 }

@@ -27,5 +27,10 @@ namespace Domain.Publication
 
             Validate(this, new PublicationValidator());
         }
+
+        public Publication()
+        {
+
+        }
     }
 }

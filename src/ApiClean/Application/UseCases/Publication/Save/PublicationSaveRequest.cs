@@ -15,27 +15,25 @@ namespace Application.UseCases.Publication.Save
             Publication = new Domain.Publication.Publication(
                 Guid.NewGuid(), 
                 autor, 
-                title + "dsadasdas", 
-                content + "sdfsdfasfas", 
+                title, 
+                content, 
                 DateTime.Now, 
                 new List<Domain.Comment.Comment>(), 
                 topic
             );
         }
 
-        public PublicationSaveRequest(Guid id, Domain.User.User autor, string title, string content, Domain.Topic.Topic topic)
+        public PublicationSaveRequest(Guid id, Domain.User.User autor, string title, string content, DateTime dateCreated, List<Domain.Comment.Comment> comments, Domain.Topic.Topic topic)
         {
             Publication = new Domain.Publication.Publication(
                 id,
                 autor,
                 title,
                 content,
-                DateTime.Now,
-                new List<Domain.Comment.Comment>(),
+                dateCreated,
+                comments,
                 topic
             );
         }
-
-        
     }
 }

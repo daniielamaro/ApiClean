@@ -6,11 +6,11 @@ namespace Application.UseCases.Publication.Delete
 {
     public class PublicationDeleteRequest
     {
-        public Guid PubId { get; private set; }
+        public Guid PublicationId { get; private set; }
 
-        public PublicationDeleteRequest(Guid pubId)
+        public PublicationDeleteRequest(Guid publicationId)
         {
-            PubId = pubId;
+            PublicationId = publicationId;
         }
     }
 }

@@ -22,13 +22,13 @@ namespace Application.UseCases.Publication.Delete
         {
             try
             {
-                var ret = publicationWriteOnlyRepository.Delete(request.PubId);
+                var ret = publicationWriteOnlyRepository.Delete(request.PublicationId);
                 if (ret == 0)
                 {
                     output.Error($"Error on process Delete Publication");
                     return;
                 }
-                output.Standard(request.PubId);
+                output.Standard(request.PublicationId);
             }
             catch (Exception ex)
             {

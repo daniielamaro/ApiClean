@@ -19,9 +19,9 @@ namespace Application.UseCases.User.Delete
         {
             try
             {
-                var alfa = userWriteOnlyRepository.Delete(request.UserId);
+                var ret = userWriteOnlyRepository.Delete(request.UserId);
 
-                if(alfa == 0)
+                if(ret == 0)
                 {
                     output.Error($"Error on process Delete Topic");
                     return;

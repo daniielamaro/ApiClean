@@ -21,7 +21,7 @@ namespace Application.UseCases.User.Save
             try
             {
                 validateHandler.ProcessRequest(request);
-                output.Standard(request.User.Id);
+                output.Standard(request.User);
             }
             catch(Exception e)
             {

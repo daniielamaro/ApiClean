@@ -8,5 +8,6 @@ namespace Application.UseCases.Publication.Get
     {
         void Execute(PublicationGetRequest request);
 
+        Domain.Publication.Publication GetObject(PublicationGetRequest request);
     }
 }

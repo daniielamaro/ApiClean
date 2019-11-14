@@ -31,22 +31,10 @@ namespace WebApi.UseCases.Publication.Add
         public IActionResult CreatePublication([FromBody] InputPublication input)
         {   
             var userRequest = new UserGetRequest(input.AutorId);
-            var autorTemp = userGetUseCase.GetObject(userRequest);
-
-            var autor = new Domain.User.User(
-                autorTemp.Id,
-                autorTemp.Name,
-                autorTemp.Email,
-                autorTemp.Password
-            );
+            var autor = userGetUseCase.GetObject(userRequest);
 
             var topicRequest = new TopicGetRequest(input.TopicId);
-            var topicTemp = topicGetUseCase.GetObject(topicRequest);
-
-            var topic = new Domain.Topic.Topic(
-                topicTemp.Id,
-                topicTemp.Name
-            );
+            var topic = topicGetUseCase.GetObject(topicRequest);
 
             var request = new PublicationSaveRequest(
                 autor,

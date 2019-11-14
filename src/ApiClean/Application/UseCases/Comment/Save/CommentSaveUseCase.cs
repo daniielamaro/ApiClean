@@ -22,7 +22,7 @@ namespace Application.UseCases.Comment.Save
             try
             {
                 validateHandler.ProcessRequest(request);
-                output.Standard(request.Comment.Id);
+                output.Standard(request.Comment);
             }
             catch (Exception ex)
             {

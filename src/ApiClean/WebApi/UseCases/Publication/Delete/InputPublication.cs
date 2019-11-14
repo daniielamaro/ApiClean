@@ -6,6 +6,6 @@ namespace WebApi.UseCases.Publication.Delete
     public class InputPublication
     {
         [Required]
-        public Guid PublicationId { get; private set; }
+        public Guid PublicationId { get; set; }
     }
 }

@@ -23,7 +23,7 @@ namespace Application.UseCases.Topic.Save
             try
             {
                 validateHandler.ProcessRequest(request);
-                output.Standard(request.Topic.Id);
+                output.Standard(request.Topic);
             }
             catch (Exception ex)
             {
