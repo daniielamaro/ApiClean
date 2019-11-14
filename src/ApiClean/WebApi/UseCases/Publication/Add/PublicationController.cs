@@ -1,6 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using Application.UseCases.Publication.Save;
+using Application.UseCases.Topic.Get;
+using Application.UseCases.User.Get;
 using Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,13 +13,15 @@ namespace WebApi.UseCases.Publication.Add
     {
         private readonly PublicationPresenter presenter;
         private readonly IPublicationSaveCase publicationSaveCase;
-        private readonly Context context;
+        private readonly IUserGetUseCase userGetUseCase;
+        private readonly ITopicGetUseCase topicGetUseCase;
 
-        public PublicationController(PublicationPresenter presenter, IPublicationSaveCase publicationSaveUseCase)
+        public PublicationController(PublicationPresenter presenter, IPublicationSaveCase publicationSaveUseCase, IUserGetUseCase userGetUseCase, ITopicGetUseCase topicGetUseCase)
         {
             this.presenter = presenter;
             this.publicationSaveCase = publicationSaveUseCase;
-            context = new Context();
+            this.userGetUseCase = userGetUseCase;
+            this.topicGetUseCase = topicGetUseCase;
         }
 
         [HttpPost]
@@ -26,15 +29,20 @@ namespace WebApi.UseCases.Publication.Add
         [ProducesResponseType(typeof(Guid), 200)]
         [ProducesResponseType(typeof(ProblemDetails), 400)]
         public IActionResult CreatePublication([FromBody] InputPublication input)
-        {
-            var autorTemp = context.Users.Find(input.AutorId);
+        {   
+            var userRequest = new UserGetRequest(input.AutorId);
+            var autorTemp = userGetUseCase.GetObject(userRequest);
+
             var autor = new Domain.User.User(
                 autorTemp.Id,
                 autorTemp.Name,
                 autorTemp.Email,
                 autorTemp.Password
             );
-            var topicTemp = context.Topics.Find(input.TopicId);
+
+            var topicRequest = new TopicGetRequest(input.TopicId);
+            var topicTemp = topicGetUseCase.GetObject(topicRequest);
+
             var topic = new Domain.Topic.Topic(
                 topicTemp.Id,
                 topicTemp.Name

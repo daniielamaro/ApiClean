@@ -33,5 +33,10 @@ namespace Application.UseCases.User.Get
                 output.Error($"Error on process: {ex.Message}");
             }
         }
+
+        public Domain.User.User GetObject(UserGetRequest request)
+        {
+            return userReadOnlyRepository.GetById(request.UserId);
+        }
     }
 }

@@ -35,5 +35,10 @@ namespace Application.UseCases.Topic.Get
                 output.Error($"Error on process: {ex.Message}");
             }
         }
+
+        public Domain.Topic.Topic GetObject(TopicGetRequest request)
+        {
+            return topicReadOnlyRepository.GetById(request.TopicId);
+        }
     }
 }
